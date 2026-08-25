@@ -42,6 +42,46 @@ defaultContentLanguageInSubdir = false
         "Machine Learning"
       ]
 
+    [[languages.zh.menus.main]]
+      name = "首页"
+      url = "#home"
+      weight = 10
+
+    [[languages.zh.menus.main]]
+      name = "关于"
+      url = "#about"
+      weight = 20
+
+    [[languages.zh.menus.main]]
+      name = "研究"
+      pageRef = "/research"
+      weight = 30
+
+    [[languages.zh.menus.main]]
+      name = "项目"
+      pageRef = "/projects"
+      weight = 40
+
+    [[languages.zh.menus.main]]
+      name = "简历"
+      url = "/files/xiong-hao-cv.pdf"
+      weight = 50
+
+    [[languages.zh.menus.main]]
+      name = "博客"
+      pageRef = "/blog"
+      weight = 60
+
+    [[languages.zh.menus.main]]
+      name = "联系"
+      url = "#contact"
+      weight = 70
+
+    [[languages.zh.menus.main]]
+      name = "English"
+      pageRef = "/english"
+      weight = 80
+
 
 # ============================================================
 # 构建
@@ -100,6 +140,7 @@ defaultContentLanguageInSubdir = false
   copyright = "© 2026 | 熊浩"
 
   # 暂时没有英文 / 法文简历
+  resume_url = "/files/xiong-hao-cv.pdf"
   resume_url_en = ""
   resume_url_fr = ""
 
