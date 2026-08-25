@@ -27,18 +27,18 @@ defaultContentLanguageInSubdir = false
     [languages.zh.params]
 
       # 首页主标题
-      tagline = "能源与动力工程 · 可再生能源 · 机器学习"
+      tagline = "能源与动力工程 · 氢能 · 机器学习"
 
       # 首页个人简介
-      hero_description = "华中科技大学能源与动力工程专业硕士，关注机器学习、数据挖掘、绿色能源利用与能源系统。"
+      hero_description = "华中科技大学能源与动力工程专业硕士研究生，关注氢能、可再生能源、机器学习与数据驱动能源系统。"
 
       # 所在地
       hero_location = "武汉，中国"
 
       # 首页标签
       collab_tags = [
+        "Hydrogen Energy",
         "Renewable Energy",
-        "Solar Energy",
         "Machine Learning"
       ]
 
@@ -114,7 +114,7 @@ defaultContentLanguageInSubdir = false
   og_image = "/images/profile.jpg"
 
   # 网站描述
-  description = "熊浩的个人学术主页——能源与动力工程、绿色能源利用与能源系统、机器学习、数据挖掘与分析。"
+  description = "熊浩的个人学术主页——能源与动力工程、氢能、可再生能源、机器学习与数据驱动能源系统。"
 
 
   # ==========================================================
@@ -281,7 +281,7 @@ defaultContentLanguageInSubdir = false
 [params.pexels]
 
   queries = [
-    "solar energy",
+    "hydrogen energy",
     "renewable energy",
     "engineering"
   ]

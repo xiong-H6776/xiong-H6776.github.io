@@ -4,6 +4,9 @@ module.exports = {
     "./layouts/**/*.html",
     "./themes/careercanvas/layouts/**/*.html"
   ],
+  safelist: [
+    "fade-in-visible"
+  ],
   darkMode: "class",
   theme: {
     extend: {}

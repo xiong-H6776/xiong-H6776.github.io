@@ -30,18 +30,18 @@
       <div class="text-center lg:text-left mt-8 md:mt-0" style="width: 100%; max-width: 600px; min-width: 300px;">
         <!-- Greeting -->
         <div class="mb-4 mt-4 md:mt-0 hero-text-element" data-animation="greeting">
-          <span class="hero-text-accent font-medium text-lg block">你好，我是</span>
+          <span class="hero-text-accent font-medium text-lg block text-gray-700 dark:text-white">你好，我是</span>
         </div>
         <!-- Name -->
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-heading leading-tight hero-name hero-text-element" data-animation="name">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-heading leading-tight hero-name hero-text-element text-gray-900 dark:text-white" data-animation="name">
           {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}
         </h1>
         <!-- Tagline: one block; each cycling phrase wraps (up to ~2 lines); split phrases in JS on ". " -->
-        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-6 font-light hero-text-accent hero-text-element w-full flex items-center justify-center lg:justify-start" data-animation="tagline">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-6 font-light hero-text-accent hero-text-element text-gray-700 dark:text-white w-full flex items-center justify-center lg:justify-start" data-animation="tagline">
           <span class="typewriter w-full max-w-full text-center lg:text-left" data-original-text="{{ .Site.Params.tagline }}">{{ .Site.Params.tagline }}</span>
         </h2>
         <!-- Description -->
-        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lg:mx-0 hero-text-muted leading-relaxed hero-text-element px-4 py-3 rounded-lg" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px);" data-animation="description">
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lg:mx-0 hero-text-muted text-gray-700 dark:text-white leading-relaxed hero-text-element px-4 py-3 rounded-lg bg-black/5 dark:bg-white/5 backdrop-blur-sm" data-animation="description">
           {{ .Site.Params.hero_description }}
         </p>
 
@@ -56,9 +56,9 @@
         </div>
         <!-- Social links -->
         <div class="flex justify-center lg:justify-end mt-8 mb-8 md:mb-0 hero-text-element" data-animation="social">
-          <div class="flex space-x-4 px-4 py-3 rounded-lg" style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);">
+          <div class="flex space-x-4 px-4 py-3 rounded-lg bg-black/5 dark:bg-white/20 backdrop-blur-sm">
             {{ range .Site.Params.social }}
-            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-white transition-transform duration-300 hover:scale-125">
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-gray-700 dark:text-white transition-transform duration-300 hover:scale-125">
               <i class="fab fa-{{ .icon }} text-3xl"></i>
             </a>
             {{ end }}
@@ -77,4 +77,12 @@
     rel="noopener noreferrer"
   >Photo / Pexels</a>
 </section>
+
+<style>
+  html:not(.dark) .hero-name {
+    background: none;
+    color: var(--color-text-primary);
+    -webkit-text-fill-color: currentColor;
+  }
+</style>
   

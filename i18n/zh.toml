@@ -6,3 +6,36 @@ other = "联系我"
 
 [viewCV]
 other = "查看简历"
+
+[aboutMe]
+other = "关于我"
+
+[aboutName]
+other = "关于"
+
+[connectOnLinkedIn]
+other = "在 LinkedIn 联系"
+
+[downloadResume]
+other = "下载简历"
+
+[interests]
+other = "研究方向"
+
+[keyAchievements]
+other = "主要经历"
+
+[languages]
+other = "语言"
+
+[learnMore]
+other = "了解更多"
+
+[more]
+other = "更多"
+
+[quickFacts]
+other = "基本信息"
+
+[relatedContent]
+other = "相关内容"

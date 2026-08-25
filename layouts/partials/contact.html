@@ -1,0 +1,31 @@
+<section id="contact" class="py-12 bg-bg dark:bg-bg border-t border-border-primary" data-animate>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{ with .Site.GetPage "contact" }}
+      <h2 class="text-3xl font-bold text-center mb-4 font-heading text-text-primary dark:text-text-primary">{{ .Title }}</h2>
+      <p class="text-lg text-center mb-10 text-text-secondary dark:text-text-tertiary italic">{{ .Params.intro }}</p>
+
+      <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-8 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
+        <div class="prose max-w-none prose-lg markdown-content dark:prose-invert prose-gray mb-8 text-center">
+          {{ .Content }}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a href="mailto:{{ $.Site.Params.email }}" class="flex items-center justify-center gap-3 bg-bg dark:bg-bg p-4 rounded-lg border border-border-primary dark:border-border-primary button-hover">
+            <i class="fas fa-envelope text-primary dark:text-primary-light text-xl"></i>
+            <span class="text-text-primary dark:text-text-primary break-all">{{ $.Site.Params.email }}</span>
+          </a>
+
+          <a href="{{ $.Site.Params.github_url }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-bg dark:bg-bg p-4 rounded-lg border border-border-primary dark:border-border-primary button-hover">
+            <i class="fab fa-github text-primary dark:text-primary-light text-xl"></i>
+            <span class="text-text-primary dark:text-text-primary">GitHub</span>
+          </a>
+
+          <div class="flex items-center justify-center gap-3 bg-bg dark:bg-bg p-4 rounded-lg border border-border-primary dark:border-border-primary">
+            <i class="fas fa-map-marker-alt text-primary dark:text-primary-light text-xl"></i>
+            <span class="text-text-primary dark:text-text-primary">{{ $.Site.Language.Params.hero_location }}</span>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</section>
