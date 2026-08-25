@@ -1,6 +1,7 @@
 ---
 title: "基于化学式的固态锂电池材料热膨胀系数预测"
 description: "使用监督学习预测含锂化合物的热膨胀系数，并开展电极—电解质热匹配初步筛选。"
+featured_image: "/images/projects/lithium-battery-ml.png"
 weight: 30
 tags: ["固态锂电池", "监督学习", "随机森林", "特征工程"]
 ---

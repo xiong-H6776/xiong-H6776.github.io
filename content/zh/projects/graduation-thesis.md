@@ -1,6 +1,7 @@
 ---
 title: "氢内燃机爆震机理与唯象模型研究"
 description: "构建氢内燃机准维燃烧—唯象爆震一体化模型，并使用试验台架数据进行标定与验证。"
+featured_image: "/images/projects/hydrogen-engine-knock.png"
 weight: 10
 tags: ["氢内燃机", "爆震模型", "机器学习", "MATLAB"]
 ---

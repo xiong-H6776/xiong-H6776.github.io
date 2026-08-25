@@ -1,6 +1,7 @@
 ---
 title: "聚光太阳能驱动藻类生物质制氢固碳技术与装置"
 description: "双罐储热系统耦合设计与太阳能制氢一体化反应釜开发。"
+featured_image: "/images/projects/solar-hydrogen.png"
 weight: 20
 tags: ["太阳能", "生物质制氢", "COMSOL", "SolidWorks"]
 ---
