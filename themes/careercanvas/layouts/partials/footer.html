@@ -1,0 +1,48 @@
+<footer class="bg-bg-secondary dark:bg-bg-secondary text-text-primary py-12 border-t border-border-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <a href="/#home" class="text-xl font-bold text-text-primary font-heading">{{ .Site.Language.Params.firstName }} {{ .Site.Language.Params.lastName }} </a>
+        <p class="text-text-secondary dark:text-text-muted mt-1">{{ .Site.Language.Params.tagline }}</p>
+        <p class="text-text-secondary dark:text-text-muted mt-2">{{ .Site.Language.Params.hero_description }}</p>
+        <p class="text-text-secondary dark:text-text-muted mt-1">
+          <i class="fas fa-map-marker-alt mr-2"></i>{{ .Site.Language.Params.hero_location }}
+        </p>
+        <a href="mailto:{{ .Site.Params.email }}" class="text-text-secondary dark:text-text-muted text-primary dark:text-primary-light mt-1 inline-block">
+          <i class="fas fa-envelope mr-2"></i>{{ .Site.Params.email }}
+        </a>
+        {{ $calendlyIcon := resources.Get "images/calendly-icon.svg" }}
+        <div class="flex space-x-8 mt-6 items-center" data-animation="social">
+          {{ range .Site.Params.social }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-text-secondary dark:text-text-muted text-third dark:text-third-light transition-transform duration-300 hover:scale-125">
+            {{ if and (eq .icon "calendly") $calendlyIcon }}
+            <img src="{{ $calendlyIcon.RelPermalink }}" alt="Calendly" class="w-8 h-8" width="32" height="32">
+            {{ else }}
+            <i class="fab fa-{{ .icon }} text-3xl text-text-primary dark:text-text-primary"></i>
+            {{ end }}
+          </a>
+          {{ end }}
+          {{ if and .Site.Params.calendly_url $calendlyIcon }}
+          <button type="button" class="calendly-open-trigger text-text-secondary dark:text-text-muted text-third dark:text-third-light transition-transform duration-300 hover:scale-125" aria-label="Book a meeting on Calendly">
+            <img src="{{ $calendlyIcon.RelPermalink }}" alt="" class="w-8 h-8" width="32" height="32">
+          </button>
+          {{ end }}
+        </div>
+      </div>
+      <div class="flex flex-col items-end">
+        <div class="flex flex-wrap gap-2 justify-end">
+          {{ range .Site.Language.Params.collab_tags }}
+          {{ $isPriority := or (eq . "Urgent") (eq . "Priority") (eq . "Leadership") (eq . "Management") }}
+          <span class="{{ if $isPriority }}bg-third text-text-primary{{ else }}bg-bg-tertiary dark:bg-bg-tertiary text-text-primary{{ end }} inline-flex items-center justify-center text-center px-3 py-2 max-w-[11rem] min-h-[2.75rem] rounded-xl text-xs sm:text-sm font-semibold leading-snug whitespace-normal shadow-md">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-border-primary text-center text-text-secondary dark:text-text-muted text-sm">
+      <p>© {{ time.Now.Year }} | {{ .Site.Params.copyright }}</p>
+    </div>
+  </div>
+</footer>
+
+

@@ -1,0 +1,103 @@
+# CareerCanvas theme – example config
+# Copy sections into your site config.toml and replace placeholders.
+# For running the site, see the Portfolio repo README: https://github.com/felipecordero/felipecordero.github.io
+
+baseURL = "https://yoursite.com"
+languageCode = "en-us"
+title = "Your Name"
+theme = "careercanvas"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 1
+    [languages.en.params]
+      tagline = "First sentence. Second sentence cycles in the same block (wraps to ~2 lines)."
+      hero_description = "Short bio for the hero section."
+      hero_location = "City, Country"
+      collab_tags = ["Tag 1", "Tag 2", "Tag 3"]
+  # Add more [languages.xx] blocks for other languages (es, fr, etc.)
+
+[build]
+  writeStats = true
+
+[params]
+  name = "Your Name"
+  email = "your@email.com"
+  profile_image = "/images/your-profile.jpg"
+  author = "Your Name"
+  og_image = "images/your-og.png"
+  description = "One-line site description for SEO."
+  linkedin_url = "https://linkedin.com/in/yourprofile"
+  linkedin_text = "linkedin.com/in/yourprofile"
+  github_url = "https://github.com/yourusername"
+  github_text = "github.com/yourusername"
+  calendly_url = ""
+  calendly_height = "700px"
+  copyright = "© 2025 | Your Name"
+  resume_url_en = "/files/your-cv-en.pdf"
+  resume_url_fr = "/files/your-cv-fr.pdf"
+  resume_label = "View CV"
+  sectionPagesMenu = "main"
+  formspreeendpoint = ""
+  pexelsapikey = ""
+
+  [[params.social]]
+    icon = "linkedin-in"
+    url = "https://linkedin.com/in/yourprofile"
+  [[params.social]]
+    icon = "github"
+    url = "https://github.com/yourusername"
+  # [[params.social]]
+  #   icon = "calendly"
+  #   url = "https://calendly.com/yourlink"
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+
+[server]
+  [[server.headers]]
+    for = "/**/*.css"
+    [server.headers.values]
+      Content-Type = "text/css"
+
+[security]
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$']
+
+# One palette is picked at random per page load. Each needs name, main_color, second_color, third_color (hex).
+[params.color_palettes]
+  [[params.color_palettes.palette]]
+    name = "professional"
+    main_color = "#474A51"
+    second_color = "#E52521"
+    third_color = "#3CB043"
+  [[params.color_palettes.palette]]
+    name = "ocean"
+    main_color = "#1E40AF"
+    second_color = "#06B6D4"
+    third_color = "#10B981"
+  [[params.color_palettes.palette]]
+    name = "steel"
+    main_color = "#374151"
+    second_color = "#6B7280"
+    third_color = "#10B981"
+  [[params.color_palettes.palette]]
+    name = "slate"
+    main_color = "#475569"
+    second_color = "#0EA5E9"
+    third_color = "#F97316"
+
+# Pexels hero backgrounds
+[params.pexels]
+  queries = ["long span bridges", "skyscrapers", "sky and clouds"]

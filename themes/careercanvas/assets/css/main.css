@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Nunito+Sans:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .font-heading {
+    font-family: 'Montserrat', 'Nunito Sans', sans-serif;
+  }
+
+  /* Dynamic Color Transitions */
+  .color-transition * {
+    transition: color 1s ease, background-color 1s ease, border-color 1s ease, box-shadow 1s ease !important;
+  }
+  
+  .color-transition {
+    transition: --color-main 1s ease, --color-second 1s ease, --color-third 1s ease !important;
+  }
+
+  /* Gradient Background */
+  .gradient-bg {
+    background: linear-gradient(135deg, 
+      var(--color-primary-dark) 0%, 
+      var(--color-primary) 20%, 
+      var(--color-primary-light) 40%, 
+      var(--color-primary) 60%, 
+      var(--color-primary-dark) 75%, 
+      var(--color-primary-dark) 90%, 
+      var(--color-primary) 100%
+    );
+    position: relative;
+  }
+
+  /* Hide gradient initially to prevent flash, JavaScript will show it if needed */
+  .hero-section.gradient-bg {
+    background: transparent;
+  }
+
+  /* Pexels Background */
+  .pexels-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .pexels-credit {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.75rem;
+    z-index: 20;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+  }
+
+  .pexels-credit:hover {
+    text-decoration: underline;
+  }
+
+  /* Ensure animations stay above background */
+  .pexels-bg .morphing-shapes {
+    z-index: 2;
+  }
+
+  .pexels-bg .morphing-shapes > div {
+    z-index: 2;
+  }
+
+  /* Ensure content stays above overlay */
+  .pexels-bg .max-w-7xl {
+    position: relative;
+    z-index: 10;
+  }
+
+
+
+  /* Contact info card: one circle style for all icons */
+  .contact-info-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-primary);
+  }
+  .dark .contact-info-icon {
+    color: var(--color-primary-light);
+  }
+  .contact-info-icon i {
+    font-size: 1.5rem;
+  }
+  .contact-info-icon img,
+  .contact-info-icon .contact-info-icon-img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .contact-info-icon img {
+    object-fit: contain;
+    filter: brightness(0);
+  }
+  .dark .contact-info-icon img {
+    filter: brightness(0) invert(1);
+  }
+  .contact-info-icon .contact-info-icon-img {
+    display: block;
+    mask-image: var(--calendly-mask);
+    -webkit-mask-image: var(--calendly-mask);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    background-color: var(--color-primary);
+  }
+  .dark .contact-info-icon .contact-info-icon-img {
+    background-color: var(--color-primary-light);
+  }
+
+  /* Company Link Styling */
+  .company-link {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .company-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  }
+
+  /* Skill Pills - All use main color variations */
+  .skill-pill {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary-light);
+  }
+
+  /* Experience Timeline */
+  .timeline-line {
+    background: linear-gradient(to bottom, var(--color-second-light) 0%, var(--color-second) 50%, var(--color-second-light) 100%);
+  }
+
+  .timeline-bullet {
+    background-color: var(--color-second);
+    border-color: var(--color-bg);
+  }
+
+  /* Company Cards */
+  .company-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Ensure company card has proper dark mode background */
+  .dark .company-card {
+    background-color: var(--color-gray-600) !important;
+  }
+
+  .company-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-third), var(--color-third-dark));
+    transform: scaleX(0);
+  }
+
+  /* Contact Cards - Semantically correct styling */
+  .contact-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Ensure contact card has proper dark mode background */
+  .dark .contact-card {
+    background-color: var(--color-gray-600) !important;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+    transform: scaleX(0);
+  }
+
+  /* Footer social media icons - ensure third color in dark mode */
+  .dark footer .fab {
+    color: var(--color-white) !important;
+  }
+
+  /* Footer collaboration tags - ensure proper dark mode styling */
+  .dark footer .collab-tag,
+  .dark footer span[class*="bg-third-lighter"] {
+    background-color: var(--color-third) !important;
+    color: var(--color-white) !important;
+  }
+
+  /* Lighter card backgrounds for dark mode */
+  .dark .company-card {
+    background: linear-gradient(to bottom right, 
+      color-mix(in srgb, var(--color-primary) 15%, var(--color-gray-800)),
+      color-mix(in srgb, var(--color-primary) 10%, var(--color-gray-700))
+    ) !important;
+  }
+
+  .dark .contact-card {
+    background: linear-gradient(to bottom right, 
+      color-mix(in srgb, var(--color-primary) 15%, var(--color-gray-800)),
+      color-mix(in srgb, var(--color-primary) 10%, var(--color-gray-700))
+    ) !important;
+  }
+
+  .dark .achievements-card {
+    background: linear-gradient(to bottom right, 
+      color-mix(in srgb, var(--color-primary) 15%, var(--color-gray-800)),
+      color-mix(in srgb, var(--color-primary) 10%, var(--color-gray-700))
+    ) !important;
+  }
+
+  /* Navigation */
+  /* Custom underline effect using semantic colors */
+  .nav-link {
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-third);
+    transition: width 0.3s ease;
+    z-index: 1;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link:hover {
+    color: var(--color-third);
+  }
+
+  .active-nav {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  /* Top nav: own stacking context above hero so links stay clickable */
+  nav.fixed {
+    z-index: 100;
+    isolation: isolate;
+  }
+
+  #calendly-modal {
+    z-index: 101;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    /* Navbar uses h-16 (4rem). baseof.html also adds a h-16 spacer. */
+    min-height: calc(100svh - 4rem);
+    min-height: calc(100vh - 4rem);
+  }
+
+  /* Side-by-side hero: top-align columns (.items-center is in @layer utilities and would win without !important) */
+  @media (min-width: 1024px) {
+    .hero-inner-row {
+      align-items: flex-start !important;
+    }
+
+    /* Nudge portrait up so the top of the frame lines up with the greeting line (beats md:mt-0 from Tailwind) */
+    .hero-profile-col {
+      margin-top: -1rem !important;
+    }
+
+    /* Larger than lg:w-96 (arbitrary Tailwind classes are often missing from Hugo’s CSS output) */
+    .hero-profile-ring {
+      width: min(30rem, 100%) !important;
+      height: auto !important;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  /* Location badge: one scale factor (keeps inner markup at base size) */
+  .hero-location-badge-scale {
+    transform-origin: bottom right;
+    transform: scale(1.18);
+  }
+
+  @media (min-width: 1024px) {
+    .hero-location-badge-scale {
+      transform: scale(1.28);
+    }
+  }
+
+  .hero-name {
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-primary-lighter) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-tagline::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--color-primary);
+  }
+
+
+
+  /* Collaboration Tags */
+  .collab-tag {
+    background-color: var(--color-primary-lighter);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+  }
+
+  .dark .collab-tag {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white) !important;
+    font-weight: 600;
+    text-shadow: 0 1px 2px var(--color-shadow-dark);
+  }
+
+  /* Simple, DRY hover effects using CSS variables */
+  :root {
+    --hover-scale: 1.15;
+    --hover-transition: 0.3s ease;
+    --hover-lift: 4px;
+  }
+
+  /* Card hover - simple lift effect */
+  .card-hover {
+    transition: all var(--hover-transition);
+    cursor: pointer;
+  }
+
+  .card-hover:hover {
+    transform: translateY(calc(-1 * var(--hover-lift)));
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark .card-hover:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Hero buttons - ensure proper sizing */
+  .hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    min-height: 48px;
+    transition: all var(--hover-transition);
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+
+  /* Button hover - no movement, just highlight */
+  .button-hover:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.1);
+  }
+
+  .dark .button-hover:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    filter: brightness(1.15);
+  }
+
+  /* Quick fact hover - natural rounded lighting effect */
+  .quick-fact-card {
+    position: relative;
+    transition: all var(--hover-transition);
+    cursor: pointer;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    background: color-mix(in srgb, var(--color-primary) 2%, var(--color-bg));
+    border: 1px solid transparent;
+    min-height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+
+  .dark .quick-fact-card {
+    background: color-mix(in srgb, var(--color-primary) 4%, var(--color-bg));
+  }
+
+  .quick-fact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      color-mix(in srgb, var(--color-primary) 8%, transparent) 0%,
+      color-mix(in srgb, var(--color-primary) 4%, transparent) 30%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity var(--hover-transition);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .quick-fact-card:hover::before {
+    opacity: 1;
+  }
+
+  .quick-fact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 25px rgba(0, 0, 0, 0.1),
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  .dark .quick-fact-card:hover {
+    box-shadow: 
+      0 8px 25px rgba(0, 0, 0, 0.3),
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+
+  .dark .quick-fact-card::before {
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      color-mix(in srgb, var(--color-primary) 12%, transparent) 0%,
+      color-mix(in srgb, var(--color-primary) 6%, transparent) 40%,
+      transparent 80%
+    );
+  }
+  /* Icon size and zoom - devicon font needs explicit size (img/.fas have intrinsic size) */
+  .tech-skill-card .devicon.colored {
+    font-size: 3rem; /* match container h-14 / text-5xl */
+  }
+  .tech-skill-card img,
+  .tech-skill-card .fas,
+  .tech-skill-card .devicon {
+    transition: transform var(--hover-transition);
+  }
+
+  .tech-skill-card:hover img,
+  .tech-skill-card:hover .fas,
+  .tech-skill-card:hover .devicon {
+    transform: scale(var(--hover-scale));
+  }
+
+  /* Lighten devicons that are too dark (GitHub, Linux) so they stay visible on light bg */
+  .tech-skill-card .devicon-github-plain.colored,
+  .tech-skill-card .devicon-github-original.colored,
+  .tech-skill-card .devicon-linux-plain.colored {
+    color: #6b7280 !important; /* gray-500 */
+  }
+  .dark .tech-skill-card .devicon-github-plain.colored,
+  .dark .tech-skill-card .devicon-github-original.colored,
+  .dark .tech-skill-card .devicon-linux-plain.colored {
+    color: #9ca3af !important; /* gray-400, visible on dark bg */
+  }
+}
+
+@layer utilities {
+  section[id] {
+    scroll-margin-top: 3rem;
+  }
+
+  /* Simple fade-in animation states */
+  section[data-animate] {
+    opacity: 0;
+    /* transform: translateY(15px); */
+    transition: opacity 0.6s ease;
+  }
+
+  section[data-animate].fade-in-visible {
+    opacity: 1;
+  }
+}
+
+/* Override Tailwind blue classes to use main color */
+.text-blue-600, .text-blue-500, .text-blue-400, .text-blue-300 {
+  color: var(--color-primary) !important;
+}
+
+.bg-blue-600, .bg-blue-500, .bg-blue-400 {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-blue-100 {
+  background-color: var(--color-primary-lighter) !important;
+}
+
+.border-blue-400, .border-blue-200 {
+  border-color: var(--color-primary) !important;
+}
+
+.from-blue-600, .from-blue-500 {
+  --tw-gradient-from: var(--color-primary) var(--tw-gradient-from-position) !important;
+}
+
+.to-blue-700, .to-blue-600 {
+  --tw-gradient-to: var(--color-primary-dark) var(--tw-gradient-to-position) !important;
+}
+
+.via-blue-400 {
+  --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-light) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+/* Generic color classes */
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+/* Force dark mode override for navbar name */
+.dark .text-primary.dark\:text-white {
+  color: var(--color-white) !important;
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+.text-second {
+  color: var(--color-second) !important;
+}
+
+.bg-second {
+  background-color: var(--color-second) !important;
+}
+
+.border-second {
+  border-color: var(--color-second) !important;
+}
+
+.text-third {
+  color: var(--color-third) !important;
+}
+
+.bg-third {
+  background-color: var(--color-third) !important;
+}
+
+.border-third {
+  border-color: var(--color-third) !important;
+}
+
+/* Color variations */
+.text-primary-light {
+  color: var(--color-primary-light) !important;
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-light) !important;
+}
+
+.border-primary-light {
+  border-color: var(--color-primary-light) !important;
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark) !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.border-primary-dark {
+  border-color: var(--color-primary-dark) !important;
+}
+
+.text-primary-lighter {
+  color: var(--color-primary-lighter) !important;
+}
+
+.bg-primary-lighter {
+  background-color: var(--color-primary-lighter) !important;
+}
+
+.border-primary-lighter {
+  border-color: var(--color-primary-lighter) !important;
+}
+
+.text-second-light {
+  color: var(--color-second-light) !important;
+}
+
+.bg-second-light {
+  background-color: var(--color-second-light) !important;
+}
+
+.border-second-light {
+  border-color: var(--color-second-light) !important;
+}
+
+.text-second-dark {
+  color: var(--color-second-dark) !important;
+}
+
+.bg-second-dark {
+  background-color: var(--color-second-dark) !important;
+}
+
+.border-second-dark {
+  border-color: var(--color-second-dark) !important;
+}
+
+.text-third-light {
+  color: var(--color-third-light) !important;
+}
+
+.bg-third-light {
+  background-color: var(--color-third-light) !important;
+}
+
+.border-third-light {
+  border-color: var(--color-third-light) !important;
+}
+
+.text-third-dark {
+  color: var(--color-third-dark) !important;
+}
+
+.bg-third-dark {
+  background-color: var(--color-third-dark) !important;
+}
+
+.border-third-dark {
+  border-color: var(--color-third-dark) !important;
+}
+
+.bg-second-lighter {
+  background-color: color-mix(in srgb, var(--color-second) 20%, var(--color-white)) !important;
+}
+
+.bg-third-lighter {
+  background-color: color-mix(in srgb, var(--color-third) 20%, var(--color-white)) !important;
+}
+
+.bg-third-darker {
+  background-color: color-mix(in srgb, var(--color-third) 40%, var(--color-gray-900) 60%) !important;
+}
+
+/* Background classes */
+.bg-bg {
+  background-color: var(--color-bg) !important;
+}
+
+.bg-bg-secondary {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.bg-bg-tertiary {
+  background-color: var(--color-gray-100) !important;
+}
+
+.dark .dark\:bg-bg {
+  background-color: var(--color-bg) !important;
+}
+
+.dark .dark\:bg-bg-secondary {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.dark .dark\:bg-bg-tertiary {
+  background-color: var(--color-bg-tertiary) !important;
+}
+
+/* Text color classes */
+.text-text-primary {
+  color: var(--color-text-primary) !important;
+}
+
+.text-text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+.text-text-tertiary {
+  color: var(--color-gray-500) !important;
+}
+
+.text-text-muted {
+  color: var(--color-gray-500) !important;
+}
+
+.dark .dark\:text-text-primary {
+  color: var(--color-text-primary) !important;
+}
+
+.dark .dark\:text-text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+.dark .dark\:text-text-tertiary {
+  color: var(--color-gray-300) !important;
+}
+
+.dark .dark\:text-text-muted {
+  color: var(--color-gray-400) !important;
+}
+
+/* Border color classes */
+.border-border-primary {
+  border-color: var(--color-border) !important;
+}
+
+.dark .dark\:border-border-primary {
+  border-color: var(--color-border) !important;
+}
+
+/* Gradient classes */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)) !important;
+}
+
+.bg-gradient-primary-lighter {
+  background: linear-gradient(135deg, var(--color-primary-lighter), var(--color-primary-light)) !important;
+}
+
+.bg-gradient-primary-light {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary)) !important;
+}
+
+.bg-gradient-third {
+  background: linear-gradient(135deg, var(--color-third), var(--color-third-dark)) !important;
+}
+
+.bg-gradient-third-lighter {
+  background: linear-gradient(135deg, var(--color-third-lighter), var(--color-third-light)) !important;
+}
+
+/* Typewriter: cycles phrases in JS (split on ". "); each phrase wraps to multiple lines so nothing clips */
+.typewriter {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: inherit;
+  font-size: inherit;
+  vertical-align: bottom;
+  color: transparent;
+  line-height: 1.25;
+}
+
+/* Reserve ~2 lines so layout stays stable while a one-line phrase is typing */
+.hero-section h2[data-animation="tagline"] .typewriter {
+  min-height: calc(2 * 1.25em);
+}
+
+/* Typing cursor */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--color-primary-light);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+}
+
+/* Custom Scrollbar Styles */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
+/* Dark mode scrollbar */
+.dark .sidebar-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-primary-light) 40%, transparent);
+}
+
+.dark .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-primary-light) 60%, transparent);
+}
+
+/* Firefox scrollbar */
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-primary) 30%, transparent) transparent;
+}
+
+.dark .sidebar-scroll {
+  scrollbar-color: color-mix(in srgb, var(--color-primary-light) 40%, transparent) transparent;
+}

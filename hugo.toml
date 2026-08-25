@@ -1,0 +1,246 @@
+# ============================================================
+# 熊浩 | Academic Homepage
+# CareerCanvas + Hugo
+# ============================================================
+
+baseURL = "/"
+languageCode = "zh-CN"
+title = "熊浩 | 个人主页"
+theme = "careercanvas"
+
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = false
+
+
+# ============================================================
+# 中文
+# ============================================================
+
+[languages]
+
+  [languages.zh]
+
+    contentDir = "content/zh"
+    languageName = "中文"
+    weight = 1
+
+    [languages.zh.params]
+
+      # 首页主标题
+      tagline = "能源与动力工程 · 可再生能源 · 机器学习"
+
+      # 首页个人简介
+      hero_description = "华中科技大学能源与动力工程专业硕士，关注机器学习、数据挖掘、绿色能源利用与能源系统。"
+
+      # 所在地
+      hero_location = "武汉，中国"
+
+      # 首页标签
+      collab_tags = [
+        "Renewable Energy",
+        "Solar Energy",
+        "Machine Learning"
+      ]
+
+
+# ============================================================
+# 构建
+# ============================================================
+
+[build]
+  writeStats = true
+
+
+# ============================================================
+# 个人信息
+# ============================================================
+
+[params]
+
+  name = "熊浩"
+  firstName = "熊"
+  lastName = "浩"
+
+  # 学术公开邮箱
+  email = "xionghao_research@163.com"
+
+  # 头像
+  profile_image = "/images/profile.jpg"
+
+  # 作者
+  author = "熊浩"
+
+  # SEO / Open Graph 图片
+  og_image = "/images/profile.jpg"
+
+  # 网站描述
+  description = "熊浩的个人学术主页——能源与动力工程、绿色能源利用与能源系统、机器学习、数据挖掘与分析。"
+
+
+  # ==========================================================
+  # 社交账号
+  # ==========================================================
+
+  # LinkedIn
+  linkedin_url = ""
+  linkedin_text = ""
+
+  # GitHub
+  github_url = "https://github.com/xiong-H6776"
+  github_text = "github.com/xiong-H6776"
+
+
+  # ==========================================================
+  # 其他功能
+  # ==========================================================
+
+  calendly_url = ""
+  calendly_height = "700px"
+
+  copyright = "© 2026 | 熊浩"
+
+  # 暂时没有英文 / 法文简历
+  resume_url_en = ""
+  resume_url_fr = ""
+
+  resume_label = "查看简历"
+
+  sectionPagesMenu = "main"
+
+  formspreeendpoint = ""
+
+  pexelsapikey = ""
+
+
+  # ==========================================================
+  # 首页社交图标
+  # ==========================================================
+
+  [[params.social]]
+    icon = "github"
+    url = "https://github.com/xiong-H6776"
+
+
+# ============================================================
+# 标签系统
+# ============================================================
+
+[taxonomies]
+
+  tag = "tags"
+
+
+# ============================================================
+# Markdown
+# ============================================================
+
+[markup]
+
+  [markup.goldmark]
+
+    [markup.goldmark.renderer]
+
+      unsafe = true
+
+  [markup.highlight]
+
+    style = "monokai"
+
+
+# ============================================================
+# 本地开发服务器
+# ============================================================
+
+[server]
+
+  [[server.headers]]
+
+    for = "/**/*.css"
+
+    [server.headers.values]
+
+      Content-Type = "text/css"
+
+
+# ============================================================
+# Hugo 安全配置
+# ============================================================
+
+[security]
+
+  [security.funcs]
+
+    getenv = ['^HUGO_', '^CI$']
+
+
+# ============================================================
+# Node.js 权限
+# 当前 Hugo + Tailwind 开发环境需要
+# ============================================================
+
+[security.node.permissions]
+
+  disable = true
+
+
+# ============================================================
+# CareerCanvas 颜色
+# ============================================================
+
+[params.color_palettes]
+
+  [[params.color_palettes.palette]]
+
+    name = "professional"
+
+    main_color = "#474A51"
+
+    second_color = "#E52521"
+
+    third_color = "#3CB043"
+
+
+  [[params.color_palettes.palette]]
+
+    name = "ocean"
+
+    main_color = "#1E40AF"
+
+    second_color = "#06B6D4"
+
+    third_color = "#10B981"
+
+
+  [[params.color_palettes.palette]]
+
+    name = "steel"
+
+    main_color = "#374151"
+
+    second_color = "#6B7280"
+
+    third_color = "#10B981"
+
+
+  [[params.color_palettes.palette]]
+
+    name = "slate"
+
+    main_color = "#475569"
+
+    second_color = "#0EA5E9"
+
+    third_color = "#F97316"
+
+
+# ============================================================
+# Pexels 背景
+# ============================================================
+
+[params.pexels]
+
+  queries = [
+    "solar energy",
+    "renewable energy",
+    "engineering"
+  ]

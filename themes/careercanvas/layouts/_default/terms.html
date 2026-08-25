@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="py-16">
+  <div class="max-w-5xl mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">{{ .Title }}</h1>
+    <ul class="list-disc pl-5">
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="text-primary hover:underline">
+            {{ .Title }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

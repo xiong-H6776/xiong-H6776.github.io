@@ -1,0 +1,551 @@
+/* Semantic Color Classes - Replace hardcoded Tailwind classes */
+
+/* Background Colors */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+
+.bg-primary-lighter {
+  background-color: var(--color-primary-lighter);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-success {
+  background-color: var(--color-success);
+}
+
+.bg-warning {
+  background-color: var(--color-warning);
+}
+
+.bg-error {
+  background-color: var(--color-error);
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+.text-primary-light {
+  color: var(--color-primary-light);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+/* Border Colors */
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-primary-dark {
+  border-color: var(--color-primary-dark);
+}
+
+.border-primary-light {
+  border-color: var(--color-primary-light);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.border-success {
+  border-color: var(--color-success);
+}
+
+.border-warning {
+  border-color: var(--color-warning);
+}
+
+.border-error {
+  border-color: var(--color-error);
+}
+
+/* Focus Ring Colors */
+.focus-ring-primary:focus {
+  --tw-ring-color: var(--color-primary);
+  --tw-ring-opacity: 1;
+}
+
+.focus-ring-success:focus {
+  --tw-ring-color: var(--color-success);
+  --tw-ring-opacity: 1;
+}
+
+.focus-ring-warning:focus {
+  --tw-ring-color: var(--color-warning);
+  --tw-ring-opacity: 1;
+}
+
+.focus-ring-error:focus {
+  --tw-ring-color: var(--color-error);
+  --tw-ring-opacity: 1;
+}
+
+/* Hover States */
+.hover\:bg-primary-dark:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.hover\:bg-primary-light:hover {
+  background-color: var(--color-primary-light);
+}
+
+.hover\:text-primary-dark:hover {
+  color: var(--color-primary-dark);
+}
+
+.hover\:text-primary-light:hover {
+  color: var(--color-primary-light);
+}
+
+.hover\:border-primary-dark:hover {
+  border-color: var(--color-primary-dark);
+}
+
+.hover\:border-primary-light:hover {
+  border-color: var(--color-primary-light);
+}
+
+/* Dark Mode Variants */
+.dark .dark\:bg-primary {
+  background-color: var(--color-primary);
+}
+
+.dark .dark\:bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.dark .dark\:bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+
+.dark .dark\:text-primary {
+  color: var(--color-primary);
+}
+
+.dark .dark\:text-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+.dark .dark\:text-primary-light {
+  color: var(--color-primary-light);
+}
+
+.dark .dark\:border-primary {
+  border-color: var(--color-primary);
+}
+
+.dark .dark\:border-primary-dark {
+  border-color: var(--color-primary-dark);
+}
+
+.dark .dark\:border-primary-light {
+  border-color: var(--color-primary-light);
+}
+
+.dark .dark\:hover\:bg-primary-dark:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.dark .dark\:hover\:bg-primary-light:hover {
+  background-color: var(--color-primary-light);
+}
+
+.dark .dark\:hover\:text-primary-dark:hover {
+  color: var(--color-primary-dark);
+}
+
+.dark .dark\:hover\:text-primary-light:hover {
+  color: var(--color-primary-light);
+}
+
+/* Gradient Classes */
+.bg-gradient-primary {
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+}
+
+.bg-gradient-primary-reverse {
+  background: linear-gradient(to right, var(--color-primary-dark), var(--color-primary));
+}
+
+.bg-gradient-primary-light {
+  background: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
+}
+
+/* Button Variants */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+}
+
+.btn-success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+  border-color: var(--color-success);
+}
+
+.btn-warning {
+  background-color: var(--color-warning);
+  color: var(--color-white);
+  border-color: var(--color-warning);
+}
+
+.btn-error {
+  background-color: var(--color-error);
+  color: var(--color-white);
+  border-color: var(--color-error);
+}
+
+/* Link Colors */
+.link-primary {
+  color: var(--color-primary);
+}
+
+.link-primary:hover {
+  color: var(--color-primary-dark);
+}
+
+.link-secondary {
+  color: var(--color-secondary);
+}
+
+.link-secondary:hover {
+  color: var(--color-secondary-dark);
+}
+
+/* Form Elements */
+.form-focus-primary:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.form-focus-success:focus {
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 3px rgba(var(--color-success-rgb), 0.1);
+}
+
+.form-focus-warning:focus {
+  border-color: var(--color-warning);
+  box-shadow: 0 0 0 3px rgba(var(--color-warning-rgb), 0.1);
+}
+
+.form-focus-error:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(var(--color-error-rgb), 0.1);
+}
+
+/* Status Indicators */
+.status-success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.status-warning {
+  background-color: var(--color-warning);
+  color: var(--color-white);
+}
+
+.status-error {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+.status-info {
+  background-color: var(--color-info);
+  color: var(--color-white);
+}
+
+/* Utility Classes */
+.bg-surface {
+  background-color: var(--color-bg);
+}
+
+.bg-surface-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-surface-tertiary {
+  background-color: var(--color-bg-tertiary);
+}
+
+.text-surface {
+  color: var(--color-text-primary);
+}
+
+.text-surface-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-surface-muted {
+  color: var(--color-text-muted);
+}
+
+.border-surface {
+  border-color: var(--color-border-primary);
+}
+
+.border-surface-secondary {
+  border-color: var(--color-border-secondary);
+}
+
+/* Background Colors - Direct CSS Variable Mapping */
+.bg-bg {
+  background-color: var(--color-bg);
+}
+
+.bg-bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-bg-tertiary {
+  background-color: var(--color-bg-tertiary);
+}
+
+.bg-bg-card {
+  background-color: var(--color-bg-card);
+}
+
+.bg-bg-card-secondary {
+  background-color: var(--color-bg-card-secondary);
+}
+
+/* Text Colors - Direct CSS Variable Mapping */
+.text-text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.text-text-muted {
+  color: var(--color-text-muted);
+}
+
+/* Border Colors - Direct CSS Variable Mapping */
+.border-border-primary {
+  border-color: var(--color-border-primary);
+}
+
+.border-border-secondary {
+  border-color: var(--color-border-secondary);
+}
+
+.border-border-accent {
+  border-color: var(--color-border-accent);
+}
+
+/* Dark Mode Variants for Background Colors */
+.dark .dark\:bg-bg {
+  background-color: var(--color-bg);
+}
+
+.dark .dark\:bg-bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.dark .dark\:bg-bg-tertiary {
+  background-color: var(--color-bg-tertiary);
+}
+
+.dark .dark\:bg-bg-card {
+  background-color: var(--color-bg-card);
+}
+
+.dark .dark\:bg-bg-card-secondary {
+  background-color: var(--color-bg-card-secondary);
+}
+
+/* Dark Mode Variants for Text Colors */
+.dark .dark\:text-text-primary {
+  color: var(--color-text-primary);
+}
+
+.dark .dark\:text-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.dark .dark\:text-text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.dark .dark\:text-text-muted {
+  color: var(--color-text-muted);
+}
+
+/* Dark Mode Variants for Border Colors */
+.dark .dark\:border-border-primary {
+  border-color: var(--color-border-primary);
+}
+
+.dark .dark\:border-border-secondary {
+  border-color: var(--color-border-secondary);
+}
+
+.dark .dark\:border-border-accent {
+  border-color: var(--color-border-accent);
+}
+
+/* Hover States for Background Colors */
+.hover\:bg-bg-secondary:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.dark .dark\:hover\:bg-bg-secondary:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Hover States for Text Colors */
+.hover\:text-text-primary:hover {
+  color: var(--color-text-primary);
+}
+
+.hover\:text-text-secondary:hover {
+  color: var(--color-text-secondary);
+}
+
+.dark .dark\:hover\:text-text-primary:hover {
+  color: var(--color-text-primary);
+}
+
+.dark .dark\:hover\:text-text-secondary:hover {
+  color: var(--color-text-secondary);
+}
+
+/* Hero Section Colors */
+.hero-bg-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.hero-text-accent {
+  color: var(--color-primary-light);
+}
+
+.hero-text-muted {
+  color: var(--color-primary-lighter);
+}
+
+/* Card and Component Colors */
+.card-bg-primary {
+  background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-primary-light) 100%);
+}
+
+.card-bg-secondary {
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-gray-100) 100%);
+}
+
+.dark .card-bg-secondary {
+  background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-700) 100%);
+}
+
+/* Icon Background Colors */
+.icon-bg-primary {
+  background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-primary-light) 100%);
+}
+
+.icon-bg-success {
+  background: linear-gradient(135deg, var(--color-success) 0%, var(--color-success-dark) 100%);
+}
+
+.icon-bg-warning {
+  background: linear-gradient(135deg, var(--color-warning) 0%, var(--color-warning-dark) 100%);
+}
+
+.icon-bg-error {
+  background: linear-gradient(135deg, var(--color-error) 0%, var(--color-error-dark) 100%);
+}
+
+/* Text Colors */
+.text-primary-accent {
+  color: var(--color-primary);
+}
+
+.text-primary-light {
+  color: var(--color-primary-light);
+}
+
+.text-primary-lighter {
+  color: var(--color-primary-lighter);
+}
+
+/* Border Colors */
+.border-primary-accent {
+  border-color: var(--color-primary);
+}
+
+.border-primary-light {
+  border-color: var(--color-primary-light);
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.bg-gradient-primary-light {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+}
+
+.bg-gradient-primary-lighter {
+  background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-primary-light) 100%);
+}
+
+/* Dark Mode Variants */
+.dark .hero-text-accent {
+  color: var(--color-primary-light);
+}
+
+.dark .hero-text-muted {
+  color: var(--color-primary-lighter);
+}
+
+.dark .card-bg-primary {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+}

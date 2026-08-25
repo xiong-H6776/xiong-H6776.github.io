@@ -1,0 +1,210 @@
+<section id="contact" class="py-12 bg-bg dark:bg-bg border-t border-border-primary" data-animate>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-4 font-heading text-text-primary dark:text-text-primary">{{ i18n "contactFormLabel" }}</h2>
+    {{ if .Site.Params.calendly_url }}
+    {{ $calendlyIcon := resources.Get "images/calendly-icon.svg" }}
+    <div class="flex justify-center mb-12">
+      <button type="button" class="calendly-open-trigger bg-gradient-primary text-white px-6 py-3 rounded-lg shadow-lg font-semibold text-base button-hover flex items-center">
+        {{ with $calendlyIcon }}<img src="{{ .RelPermalink }}" alt="" class="w-5 h-5 mr-2" width="20" height="20">{{ end }}Book a meeting on my Calendly
+      </button>
+    </div>
+    {{ end }}
+
+    <div class="flex flex-col lg:flex-row justify-center gap-12">
+      <!-- Contact Form -->
+      <div class="lg:w-1/2">
+        <div class="contact-card bg-bg dark:bg-bg p-8 rounded-lg shadow-lg border border-border-primary dark:border-border-primary card-hover">
+          <h3 class="text-xl font-semibold mb-6 text-text-primary dark:text-text-primary">{{ i18n "sendMeAMessage" }}</h3>
+          <form id="contact-form" action="" method="POST" class="space-y-6">
+            <input type="text" name="_gotcha" style="display:none">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <div class="flex-1">
+                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-text-secondary mb-1">{{ i18n "contactFormLabelNameLabel" }}</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-border-primary dark:border-border-primary rounded-lg focus:ring-primary focus:border-primary dark:bg-bg dark:text-text-primary" required>
+              </div>
+              <div class="flex-1">
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-text-secondary mb-1">{{ i18n "contactFormLabelEmailLabel" }}</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-border-primary dark:border-border-primary rounded-lg focus:ring-primary focus:border-primary dark:bg-bg dark:text-text-primary" required>
+              </div>
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-text-secondary mb-1">{{ i18n "contactFormLabelSubjectLabel" }}</label>
+              <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-border-primary dark:border-border-primary rounded-lg focus:ring-primary focus:border-primary dark:bg-bg dark:text-text-primary" required>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-text-secondary mb-1">{{ i18n "contactFormLabelMessageLabel" }}</label>
+              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-border-primary dark:border-border-primary rounded-lg focus:ring-primary focus:border-primary dark:bg-bg dark:text-text-primary" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="bg-gradient-primary text-white px-6 py-3 rounded-lg font-medium shadow-lg button-hover">
+                {{ i18n "contactFormSendBtnLabel" }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="lg:w-1/2">
+        {{ with .Site.GetPage "contact" }}
+        <div class="contact-card bg-bg dark:bg-bg p-8 rounded-lg shadow-lg border border-border-primary dark:border-border-primary h-full card-hover">
+          <h3 class="text-xl font-semibold mb-6 text-text-primary dark:text-text-primary">{{ i18n "contactInformation" }}</h3>
+          <p class="mb-6 text-gray-700 dark:text-text-secondary">{{ .Params.intro }}</p>
+          <div class="markdown-content text-gray-700 dark:text-text-secondary">
+          {{ .Params.Content | markdownify}}
+          </div>
+          <div class="space-y-2">
+            {{ if .Site.Params.email }}
+            <div class="flex items-center gap-3">
+              <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+              <a href="mailto:{{ .Site.Params.email }}" class="text-primary dark:text-white">{{ .Site.Params.email }}</a>
+            </div>
+            {{ end }}
+            {{ if .Site.Params.linkedin_url }}
+            <div class="flex items-center gap-3">
+              <div class="contact-info-icon"><i class="fab fa-linkedin-in"></i></div>
+              <a href="{{ .Site.Params.linkedin_url }}" target="_blank" rel="noopener noreferrer" class="text-primary dark:text-white">{{ .Site.Params.linkedin_text }}</a>
+            </div>
+            {{ end }}
+            {{ if .Site.Params.github_url }}
+            <div class="flex items-center gap-3">
+              <div class="contact-info-icon"><i class="fab fa-github"></i></div>
+              <a href="{{ .Site.Params.github_url }}" target="_blank" rel="noopener noreferrer" class="text-primary dark:text-white">{{ .Site.Params.github_text }}</a>
+            </div>
+            {{ end }}
+            {{ if .Site.Params.calendly_url }}
+            {{ with resources.Get "images/calendly-icon.svg" }}
+            <div class="flex items-center gap-3">
+              <div class="contact-info-icon" style="--calendly-mask: url({{ .RelPermalink }})">
+                <span class="contact-info-icon-img" role="img" aria-label="Calendly"></span>
+              </div>
+              <a href="{{ $.Site.Params.calendly_url }}" target="_blank" rel="noopener noreferrer" class="text-primary dark:text-white">{{ replace (replace $.Site.Params.calendly_url "https://" "") "http://" "" }}</a>
+            </div>
+            {{ end }}
+            {{ end }}
+            {{ if .Site.Params.emergency_contact }}
+            <div class="flex items-center gap-3">
+              <div class="contact-info-icon"><i class="fas fa-exclamation-triangle"></i></div>
+              <a href="mailto:{{ .Site.Params.emergency_contact }}" class="text-primary dark:text-white font-medium">{{ .Site.Params.emergency_contact }}</a>
+            </div>
+            {{ end }}
+            {{ if .Site.Language.Params.hero_location }}
+            <div class="flex items-center gap-3">
+              <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <span class="text-gray-700 dark:text-text-tertiary">{{ .Site.Language.Params.hero_location }}</span>
+            </div>
+            {{ end }}
+          </div>
+
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  {{ if .Site.Params.calendly_url }}
+  <div id="calendly-modal" class="fixed inset-0 bg-bg bg-opacity-50 hidden items-center justify-center px-4 py-8" aria-modal="true" aria-labelledby="calendly-modal-title">
+    <div class="bg-bg dark:bg-bg rounded-xl shadow-2xl w-full max-w-5xl lg:max-w-6xl max-h-[85vh] lg:max-h-[90vh] overflow-y-auto sidebar-scroll">
+      <div class="p-8">
+        <div class="flex justify-between items-center mb-6">
+          <h3 id="calendly-modal-title" class="text-2xl font-bold text-text-primary dark:text-text-primary">Schedule a Call</h3>
+          <button id="calendly-close" type="button" class="text-text-muted text-text-secondary dark:text-text-muted text-2xl font-bold">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        {{ $height := default "600px" .Site.Params.calendly_height }}
+        <div class="calendly-inline-widget" data-url="{{ .Site.Params.calendly_url }}" style="min-width:320px;height:{{ $height }};"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  {{ end }}
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        
+        // Get Formspree endpoint from secure configuration
+        const formspreeEndpoint = window.FORMSPREE_ENDPOINT;
+        
+        if (!formspreeEndpoint) {
+          showToast('⚠️ Contact form not configured. Please try again later.');
+          return;
+        }
+        
+        const formData = new FormData(form);
+    
+        try {
+          const response = await fetch(formspreeEndpoint, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+    
+          if (response.ok) {
+            showToast('✅ Thank you! I\'ll get back to you soon.');
+            form.reset();
+          } else {
+            showToast('❌ Error: Please try again.');
+          }
+        } catch (error) {
+          console.error(error);
+          showToast('⚠️ Failed to submit.');
+        }
+      });
+    }
+
+    const calendlyModal = document.getElementById('calendly-modal');
+    const calendlyClose = document.getElementById('calendly-close');
+
+    if (calendlyModal && calendlyClose) {
+      function openCalendlyModal() {
+        calendlyModal.classList.remove('hidden');
+        calendlyModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      document.querySelectorAll('.calendly-open-trigger').forEach(function (el) {
+        el.addEventListener('click', openCalendlyModal);
+      });
+
+      function closeCalendlyModal() {
+        calendlyModal.classList.add('hidden');
+        calendlyModal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+      }
+
+      calendlyClose.addEventListener('click', closeCalendlyModal);
+
+      calendlyModal.addEventListener('click', function (e) {
+        if (e.target === calendlyModal) {
+          closeCalendlyModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !calendlyModal.classList.contains('hidden')) {
+          closeCalendlyModal();
+        }
+      });
+    }
+  
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.textContent = message;
+      toast.className = 'fixed bottom-6 right-6 bg-second dark:bg-second-light text-white px-4 py-2 rounded shadow-lg';
+      document.body.appendChild(toast);
+  
+      setTimeout(() => {
+        toast.remove();
+      }, 4000);
+    }
+  });
+</script>
+

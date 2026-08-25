@@ -1,0 +1,39 @@
+<!-- Skills Section --> 
+<section id="skills" class="py-12 bg-bg-secondary dark:bg-bg-secondary skills-section border-t border-border-primary" data-animate>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{ with .Site.GetPage "skills" }}
+      <!-- Section heading -->
+      <h2 class="text-3xl font-bold text-center mb-4 font-heading text-text-primary dark:text-text-primary">{{ .Title }}</h2>
+      <p class="text-lg text-center mb-12 text-text-secondary dark:text-text-tertiary italic">{{ .Params.intro }}</p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {{ range $i, $domain := .Params.domains }}
+        <div class="bg-bg dark:bg-bg p-6 rounded-xl shadow-md skill-card border border-border-primary dark:border-border-primary card-hover" data-animate>
+          <div class="flex items-center mb-4">
+            {{ $colors := slice "text-primary" "text-second" "text-third" "text-success" "text-warning" "text-error" "text-primary-light" "text-second-light" "text-third-light" "text-primary-dark" }}
+            {{ $randomColor := index $colors (mod (add (mul (len $colors) 7) (len $domain.title)) (len $colors)) }}
+            <i class="fas fa-{{ $domain.icon }} text-3xl mr-4 {{ $randomColor }}" aria-hidden="true"></i>
+            <h3 class="text-lg font-heading font-bold text-text-primary dark:text-text-primary">{{ $domain.title }}</h3>
+          </div>
+          <p class="text-text-secondary dark:text-text-tertiary text-base leading-relaxed">{{ $domain.description }}</p>
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="text-center">
+        <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          {{ range .Params.technical }}
+          <span class="bg-gradient-primary-lighter text-text-primary dark:text-primary-dark px-4 py-2 rounded-full font-medium border border-primary-light flex items-center gap-2" data-animation="skill-tag">
+            <i class="fas fa-check-circle text-primary dark:text-primary-light text-sm"></i>
+            {{ . }}
+          </span>
+          {{ end }}
+        </div>
+      </div>
+
+    {{ end }}
+  </div>
+</section>
+
+
+  

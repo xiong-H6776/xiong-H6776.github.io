@@ -1,0 +1,62 @@
+<!-- Technical Skills Section -->
+<section id="technical" class="py-12 bg-bg-secondary dark:bg-bg-secondary border-t border-border-primary" data-animate>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{ with .Site.GetPage "technical" }}
+      <!-- Section heading -->
+      <h2 class="text-3xl font-bold text-center mb-4 font-heading text-text-primary dark:text-text-primary">{{ .Title }}</h2>
+      <p class="text-lg text-center mb-12 text-gray-700 dark:text-text-tertiary italic">{{ .Params.intro }}</p>
+
+      <!-- Technical skills groups in cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range $i, $group := .Params.technical_groups }}
+        {{ $isAdvanced := or (in $group.title "Advanced") (in $group.title "Expert") (in $group.title "Specialized") }}
+        <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-lg shadow-lg border border-border-primary dark:border-border-primary tech-skill-card card-hover"
+             data-animate>
+          <div class="project-inner">
+            <!-- Card header with title only -->
+            <div class="mb-4 text-center">
+              <h3 class="text-xl font-heading font-semibold text-text-primary dark:text-text-primary">{{ $group.title }}</h3>
+            </div>
+            
+            <!-- Skills flex layout with icons and text below -->
+            <div class="flex flex-wrap gap-8 justify-center">
+              {{ range $group.skills }}
+              <div class="flex flex-col items-center text-center">
+                {{ if .devicon_name }}
+                  {{ $style := .devicon_style | default "original" }}
+                  {{ $defaultInvertOnDark := slice "nextjs" "github" "ollama" "keras" "prisma" }}
+                  {{ $invertOnDark := or (.invert_on_dark) (in $defaultInvertOnDark .devicon_name) }}
+                  <div class="h-16 flex items-center justify-center mb-1">
+                    <img alt="{{ .name }}"
+                         width="64"
+                         height="64"
+                         loading="lazy"
+                         class="w-16 h-16 box-border rounded-md p-1 dark:bg-white/25 dark:ring-1 dark:ring-white/25 dark:brightness-135 dark:contrast-115 dark:opacity-100 {{ if $invertOnDark }}dark:invert dark:brightness-200{{ end }}"
+                         data-animation="skill-icon"
+                         data-devicon-name="{{ .devicon_name }}"
+                         data-devicon-style="{{ $style }}"
+                         data-fa-icon="{{ .icon }}" />
+                  </div>
+                {{ else }}
+                  <!-- Fallback to FontAwesome with random colors -->
+                  {{ $colors := slice "text-blue-500" "text-green-500" "text-purple-500" "text-red-500" "text-yellow-500" "text-indigo-500" "text-pink-500" "text-teal-500" "text-orange-500" "text-cyan-500" }}
+                  {{ $randomColor := index $colors (mod (add (mul (len $colors) 7) (len .name)) (len $colors)) }}
+                  <div class="h-16 flex items-center justify-center mb-1">
+                    <div class="w-16 h-16 box-border rounded-md p-1 dark:bg-white/25 dark:ring-1 dark:ring-white/25 flex items-center justify-center">
+                      <i class="fas fa-{{ .icon }} text-4xl md:text-5xl {{ $randomColor }}"
+                         data-animation="skill-icon"
+                         aria-hidden="true"></i>
+                    </div>
+                  </div>
+                {{ end }}
+                <span class="text-sm md:text-base font-semibold text-text-secondary dark:text-text-secondary">{{ .name }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section> 

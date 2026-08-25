@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Prevent dark mode flash -->
+    <script>
+        // Set dark mode as default unless explicitly set to light
+        if (localStorage.getItem('darkMode') !== 'false') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    {{ partial "head.html" . }}
+    
+    <!-- Color Variables - Load first to ensure CSS custom properties are available -->
+    {{ partial "color-variables.html" . }}
+    
+    {{ $styles := resources.Get "css/main.css" | postCSS (dict "config" "./postcss.config.js") }}
+    {{ if eq hugo.Environment "production" }}
+      {{ $styles = $styles | minify | fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />    
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}?v={{ now.Unix }}" data-version="{{ now.Unix }}">
+    <style>
+        /* Critical CSS to prevent FOUC */
+        body {
+            visibility: hidden;
+        }
+        .dark body {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body class="bg-bg dark:bg-bg text-text-primary dark:text-text-primary flex flex-col min-h-screen transition-colors duration-200">
+
+    {{ partial "nav.html" . }}
+    <div class="w-full h-16"></div>
+
+    <main class="flex-grow">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    {{ $scripts := resources.Get "js/scripts.js" }}
+    {{ $gsap := resources.Get "js/gsap-animations.js" }}
+    {{ $pexels := resources.Get "js/pexels-background.js" }}
+    {{ $colors := resources.Get "js/dynamic-colors.js" }}
+    {{ $deviconFallback := resources.Get "js/devicon-fallback.js" }}
+    {{ if eq hugo.Environment "production" }}
+      {{ $scripts = $scripts | minify | fingerprint }}
+      {{ $gsap = $gsap | minify | fingerprint }}
+      {{ $pexels = $pexels | minify | fingerprint }}
+      {{ $colors = $colors | minify | fingerprint }}
+      {{ $deviconFallback = $deviconFallback | minify | fingerprint }}
+    {{ end }}
+    {{ partial "pexels-config.html" . }}
+    {{ partial "color-config.html" . }}
+    <script src="{{ $scripts.RelPermalink }}"></script>
+    <script src="{{ $deviconFallback.RelPermalink }}"></script>
+    <script src="{{ $colors.RelPermalink }}"></script>
+    <script src="{{ $gsap.RelPermalink }}"></script>
+    <script src="{{ $pexels.RelPermalink }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fslightbox/index.js"></script>
+
+    <!-- Dark mode toggle script -->
+    <script>
+        // Set dark mode as default unless explicitly set to light
+        if (localStorage.getItem('darkMode') !== 'false') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Show content after styles are loaded
+        window.addEventListener('load', function() {
+            document.body.style.visibility = 'visible';
+        });
+    </script>
+</body>
+</html>

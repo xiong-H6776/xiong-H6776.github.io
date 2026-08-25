@@ -1,0 +1,32 @@
+name = "CareerCanvas"
+license = "MIT"
+licenselink = "https://github.com/felipecordero/careercanvas/blob/main/LICENSE"
+description = "A modern, responsive Hugo theme for personal websites and portfolios"
+homepage = "https://github.com/felipecordero/careercanvas"
+demosite = "https://felipecordero.com"
+tags = ["blog", "portfolio", "personal", "responsive", "modern", "career", "resume", "dark", "light", "landing", "tailwind", "company"]
+features = ["responsive", "blog", "portfolio", "dark mode", "resume", "career showcase", "dark", "light", "landing", "tailwind", "company"]
+min_version = "0.110.0"
+
+[author]
+  name = "Felipe Cordero"
+  homepage = "https://felipecordero.com" 
+
+# Theme Configuration
+# Note: Colors are now defined in config.toml for better user control
+# These are fallback defaults if not defined in config.toml
+
+[colors]
+  # Default theme colors (can be overridden in config.toml)
+  main_color = "#1e3a8a"    # Default dark blue
+  second_color = "#22c55e"  # Default green
+  third_color = "#f59e0b"   # Default amber
+  
+  # Pure colors (these are always the same)
+  white = "#ffffff"
+  black = "#000000"
+  
+  # Dark mode background colors (darker variants based on main color)
+  dark_bg_primary = "#050a14"      # Very dark version of main color
+  dark_bg_secondary = "#0a1428"    # Dark secondary based on main color
+  dark_bg_tertiary = "#0f1e3c"     # Dark tertiary based on main color 
