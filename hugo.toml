@@ -4,7 +4,7 @@
 # ============================================================
 
 baseURL = "/"
-languageCode = "zh-CN"
+locale = "zh-CN"
 title = "熊浩 | 个人主页"
 theme = "careercanvas"
 
@@ -21,7 +21,7 @@ defaultContentLanguageInSubdir = false
   [languages.zh]
 
     contentDir = "content/zh"
-    languageName = "中文"
+    label = "中文"
     weight = 1
 
     [languages.zh.params]
