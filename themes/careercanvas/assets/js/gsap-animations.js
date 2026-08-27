@@ -133,16 +133,12 @@ function initializeHeroAnimations() {
     // Set initial states for all animated elements
     const animatedElements = heroSection.querySelectorAll('[data-animation]');
     const bgDecorations = heroSection.querySelectorAll('.absolute.opacity-10 > div');
-    const quickFactCards = document.querySelectorAll('.quick-fact-card');
     // Only animate elements that exist — opacity-only fade (no y/rotate; matches hero portrait timing)
     if (animatedElements.length > 0) {
         gsap.set(animatedElements, { opacity: 0 });
     }
     if (bgDecorations.length > 0) {
         gsap.set(bgDecorations, { opacity: 0, scale: 0.5, rotation: -180 });
-    }
-    if (quickFactCards.length > 0) {
-        gsap.set(quickFactCards, { opacity: 0, y: 20, scale: 0.95 });
     }
     // Initialize floating background animations
     bgDecorations.forEach((circle, index) => {
@@ -191,17 +187,6 @@ function initializeHeroAnimations() {
             duration: 1, 
             stagger: 0.1 
         }, "-=0.6");
-    }
-    
-    if (quickFactCards.length > 0) {
-        tl.to(quickFactCards, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: "power2.out"
-        }, "-=0.4");
     }
     
 }

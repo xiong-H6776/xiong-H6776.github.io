@@ -22,6 +22,9 @@ defaultContentLanguageInSubdir = false
 
     contentDir = "content/zh"
     label = "中文"
+    languageCode = "zh-CN"
+    languageName = "中文"
+    title = "熊浩 | 个人主页"
     weight = 1
 
     [languages.zh.params]
@@ -42,6 +45,10 @@ defaultContentLanguageInSubdir = false
         "Machine Learning"
       ]
 
+      copyright = "熊浩"
+      resume_url = "/files/xiong-hao-cv.pdf"
+      article_date_format = "2006 年 01 月 02 日"
+
     [[languages.zh.menus.main]]
       name = "首页"
       url = "#home"
@@ -51,11 +58,6 @@ defaultContentLanguageInSubdir = false
       name = "关于"
       url = "#about"
       weight = 20
-
-    [[languages.zh.menus.main]]
-      name = "研究"
-      pageRef = "/research"
-      weight = 30
 
     [[languages.zh.menus.main]]
       name = "项目"
@@ -78,9 +80,80 @@ defaultContentLanguageInSubdir = false
       weight = 70
 
     [[languages.zh.menus.main]]
-      name = "English"
-      pageRef = "/english"
-      weight = 80
+      name = "证书"
+      pageRef = "/certificates"
+      weight = 75
+
+
+# ============================================================
+# English language site configuration
+# ============================================================
+
+  [languages.en]
+
+    contentDir = "content/en"
+    label = "English"
+    languageCode = "en"
+    languageName = "English"
+    title = "Hao Xiong | Academic Homepage"
+    weight = 2
+
+    [languages.en.params]
+
+      name = "Hao Xiong"
+      firstName = "Hao"
+      lastName = "Xiong"
+      author = "Hao Xiong"
+
+      tagline = "Energy and Power Engineering · Hydrogen Energy · Machine Learning"
+      hero_description = "MEng student in Energy and Power Engineering at Huazhong University of Science and Technology, with interests in hydrogen energy, renewable energy, machine learning, and data-driven energy systems."
+      hero_location = "Wuhan, China"
+      description = "Hao Xiong's academic homepage — energy and power engineering, hydrogen energy, renewable energy, machine learning, and data-driven energy systems."
+
+      collab_tags = [
+        "Hydrogen Energy",
+        "Renewable Energy",
+        "Machine Learning"
+      ]
+
+      copyright = "Hao Xiong"
+      resume_url = "/files/xiong-hao-cv.pdf"
+      article_date_format = "January 2, 2006"
+
+    [[languages.en.menus.main]]
+      name = "Home"
+      url = "#home"
+      weight = 10
+
+    [[languages.en.menus.main]]
+      name = "About"
+      url = "#about"
+      weight = 20
+
+    [[languages.en.menus.main]]
+      name = "Projects"
+      pageRef = "/projects"
+      weight = 40
+
+    [[languages.en.menus.main]]
+      name = "CV"
+      url = "/files/xiong-hao-cv.pdf"
+      weight = 50
+
+    [[languages.en.menus.main]]
+      name = "Blog"
+      pageRef = "/blog"
+      weight = 60
+
+    [[languages.en.menus.main]]
+      name = "Contact"
+      url = "#contact"
+      weight = 70
+
+    [[languages.en.menus.main]]
+      name = "Certificates"
+      pageRef = "/certificates"
+      weight = 75
 
 
 # ============================================================
@@ -225,7 +298,7 @@ defaultContentLanguageInSubdir = false
 
 
 # ============================================================
-# CareerCanvas 颜色
+# CareerCanvas 固定灰色调
 # ============================================================
 
 [params.color_palettes]
@@ -239,39 +312,6 @@ defaultContentLanguageInSubdir = false
     second_color = "#E52521"
 
     third_color = "#3CB043"
-
-
-  [[params.color_palettes.palette]]
-
-    name = "ocean"
-
-    main_color = "#1E40AF"
-
-    second_color = "#06B6D4"
-
-    third_color = "#10B981"
-
-
-  [[params.color_palettes.palette]]
-
-    name = "steel"
-
-    main_color = "#374151"
-
-    second_color = "#6B7280"
-
-    third_color = "#10B981"
-
-
-  [[params.color_palettes.palette]]
-
-    name = "slate"
-
-    main_color = "#475569"
-
-    second_color = "#0EA5E9"
-
-    third_color = "#F97316"
 
 
 # ============================================================

@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <h2 class="text-3xl font-bold text-center mb-12 font-heading text-text-primary dark:text-text-primary about-text-element">{{ i18n "aboutMe" }}</h2>
     <div class="flex flex-col lg:flex-row gap-8">
-      <div class="flex-1 about-text-element">
+      <div class="flex-1 about-text-element space-y-6">
         <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
           <p class="text-lg text-text-secondary dark:text-text-secondary leading-relaxed">
             {{ with .Site.GetPage "about" }}{{ .Params.intro | markdownify }}{{ end }}
@@ -16,6 +16,31 @@
           </div>
           {{ end }}
         </div>
+
+        {{ with .Site.GetPage "about" }}
+          {{ with .Params.education }}
+          <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
+            <h3 class="text-xl font-semibold font-heading text-text-primary dark:text-text-primary flex items-center border-b border-border-primary dark:border-border-primary pb-3 mb-5">
+              <i class="fas fa-graduation-cap mr-3 text-primary dark:text-white"></i>
+              {{ i18n "educationHistory" }}
+            </h3>
+            <div class="space-y-5">
+              {{ range . }}
+              <div class="flex items-start">
+                <div class="w-2.5 h-2.5 mt-2 mr-4 rounded-full bg-primary flex-shrink-0"></div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-text-primary">{{ .school }}</h4>
+                    <span class="text-sm text-text-muted dark:text-text-muted whitespace-nowrap">{{ .period }}</span>
+                  </div>
+                  <p class="mt-1 text-base text-gray-700 dark:text-text-tertiary">{{ .degree }}</p>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        {{ end }}
       </div>
       <div class="flex-1">
         <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary about-card card-hover">

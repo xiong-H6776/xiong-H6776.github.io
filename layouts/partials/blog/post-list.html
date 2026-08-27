@@ -1,0 +1,92 @@
+{{ $ctx := .Context }}
+{{ $pages := .Pages }}
+{{ $categories := .Categories }}
+<aside class="xh-blog-index" aria-label="{{ i18n "blogPostList" }}">
+  <div class="xh-blog-index__header">
+    <div class="xh-blog-index__eyebrow">{{ i18n "notesArchive" }} · {{ len $pages }} {{ i18n "postsCount" }}</div>
+    {{ partial "blog/new-note.html" $ctx }}
+    <label class="xh-blog-search">
+      <span class="sr-only">{{ i18n "searchNotes" }}</span>
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <input type="search" placeholder="{{ i18n "searchPlaceholder" }}" autocomplete="off" data-blog-search>
+    </label>
+    <div class="xh-blog-mobile-categories" data-blog-categories>
+      <button class="xh-blog-category is-active" type="button" data-blog-category="all">{{ i18n "all" }}</button>
+      {{ range $categories }}
+        <button class="xh-blog-category" type="button" data-blog-category="{{ . }}">{{ . }}</button>
+      {{ end }}
+    </div>
+  </div>
+
+  <nav class="xh-blog-post-list">
+    {{ range $pages }}
+      {{ $searchText := printf "%s %s %s %s" .Title .Description (delimit (.Params.tags | default (slice)) " ") (delimit (.Params.categories | default (slice)) " ") }}
+      <a
+        class="xh-blog-post-card{{ if eq .RelPermalink $ctx.RelPermalink }} is-current{{ end }}"
+        href="{{ .RelPermalink }}"
+        data-blog-post
+        data-blog-categories-value="{{ delimit (.Params.categories | default (slice)) "||" }}"
+        data-blog-search-value="{{ $searchText | plainify }}"
+      >
+        <h2>{{ .Title }}</h2>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        <div class="xh-blog-post-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006 / 01 / 02" }}</time>
+          {{ with .ReadingTime }}<span>· {{ . }} {{ i18n "minutesRead" }}</span>{{ end }}
+        </div>
+        {{ with .Params.tags }}
+          <div class="xh-blog-post-tags" style="margin-top:.55rem">
+            {{ range first 3 . }}<span>#{{ . }}</span>{{ end }}
+          </div>
+        {{ end }}
+      </a>
+    {{ end }}
+    <div class="xh-blog-empty-search" data-blog-empty>
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <p style="margin-top:.65rem">{{ i18n "noMatchingNotes" }}</p>
+    </div>
+  </nav>
+</aside>
+
+<script>
+  (() => {
+    const root = document.currentScript.closest('.xh-blog-shell');
+    if (!root) return;
+
+    const posts = [...root.querySelectorAll('[data-blog-post]')];
+    const search = root.querySelector('[data-blog-search]');
+    const categoryButtons = [...root.querySelectorAll('[data-blog-category]')];
+    const empty = root.querySelector('[data-blog-empty]');
+    let activeCategory = 'all';
+
+    const normalize = value => (value || '').trim().toLocaleLowerCase('{{ $ctx.Site.Language.LanguageCode }}');
+
+    const applyFilters = () => {
+      const query = normalize(search?.value);
+      let visibleCount = 0;
+
+      posts.forEach(post => {
+        const categories = (post.dataset.blogCategoriesValue || '').split('||');
+        const matchesCategory = activeCategory === 'all' || categories.includes(activeCategory);
+        const matchesSearch = !query || normalize(post.dataset.blogSearchValue).includes(query);
+        const visible = matchesCategory && matchesSearch;
+        post.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+
+      if (empty) empty.style.display = visibleCount ? 'none' : 'block';
+    };
+
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activeCategory = button.dataset.blogCategory;
+        categoryButtons.forEach(candidate => {
+          candidate.classList.toggle('is-active', candidate.dataset.blogCategory === activeCategory);
+        });
+        applyFilters();
+      });
+    });
+
+    search?.addEventListener('input', applyFilters);
+  })();
+</script>

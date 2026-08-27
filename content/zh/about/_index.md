@@ -7,15 +7,20 @@ passion_text: "我希望将能源工程与计算方法相结合，探索氢能�
 mix: "在学习与科研实践中，我使用 MATLAB、Python 进行计算与数据分析，并使用 COMSOL、SolidWorks 等工具开展工程建模与仿真。"
 personal: "目前正在持续整理过去的科研项目、毕业设计和学习笔记，并通过个人学术主页记录后续研究进展。"
 
+education:
+  - school: "华中科技大学"
+    degree: "能源与动力工程 · 硕士研究生（推免）"
+    period: "2026.09 – 2029.06"
+
+  - school: "华中科技大学"
+    degree: "能源与动力工程 · 本科"
+    period: "2022.09 – 2026.06"
+
 quickfacts:
   - title: "研究方向"
     value: "氢能\n可再生能源\n机器学习\n数据驱动能源系统"
     icon: "microscope"
     kind: "interests"
-
-  - title: "教育"
-    value: "华中科技大学\n能源与动力工程硕士研究生"
-    icon: "graduation-cap"
 
   - title: "所在地"
     value: "武汉，中国"

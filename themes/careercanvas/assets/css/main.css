@@ -456,6 +456,24 @@
       0 0 0 1px color-mix(in srgb, var(--color-primary) 20%, transparent);
   }
 
+  /* Certificates: keep document cards distinct from the dark page background. */
+  .dark .certificate-document-card {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .dark .certificate-document-card:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.36);
+  }
+
+  .dark .certificate-privacy-note {
+    background-color: rgba(0, 0, 0, 0.24);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
   .dark .quick-fact-card:hover {
     box-shadow: 
       0 8px 25px rgba(0, 0, 0, 0.3),

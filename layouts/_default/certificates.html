@@ -1,0 +1,62 @@
+{{ define "main" }}
+<section class="py-12 bg-bg dark:bg-bg">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="text-center mb-12">
+      <h1 class="text-3xl font-bold font-heading text-text-primary dark:text-text-primary">{{ .Title }}</h1>
+      {{ with .Description }}
+      <p class="mt-4 text-lg text-text-secondary dark:text-text-tertiary">{{ . }}</p>
+      {{ end }}
+      {{ with .Content }}
+      <div class="mt-4 max-w-3xl mx-auto text-text-secondary dark:text-text-tertiary leading-relaxed">{{ . }}</div>
+      {{ end }}
+    </header>
+
+    <div class="space-y-10">
+      {{ range .Params.document_groups }}
+      <section>
+        <h2 class="text-xl font-semibold font-heading text-text-primary dark:text-text-primary mb-5 flex items-center">
+          <span class="w-1.5 h-6 rounded-full bg-primary dark:bg-primary-light mr-3 shadow-sm dark:shadow-primary-light/30" aria-hidden="true"></span>
+          {{ .title }}
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {{ range .documents }}
+          {{ $documentExists := fileExists (printf "static%s" .file) }}
+          {{ if $documentExists }}
+          <a href="{{ .file }}" target="_blank" rel="noopener noreferrer" class="certificate-document-card group flex items-center gap-5 bg-gradient-to-br from-bg-secondary to-bg-tertiary p-5 rounded-xl shadow-md border border-border-primary card-hover transition-colors duration-200">
+          {{ else }}
+          <article class="certificate-document-card flex items-center gap-5 bg-gradient-to-br from-bg-secondary to-bg-tertiary p-5 rounded-xl shadow-md border border-border-primary">
+          {{ end }}
+            <span class="w-14 h-14 flex-shrink-0 rounded-xl bg-gradient-primary-lighter dark:bg-none dark:bg-gray-100 border border-primary-light dark:border-white/80 flex items-center justify-center shadow-sm dark:shadow-white/20">
+              <i class="fas fa-{{ .icon }} text-2xl text-primary dark:text-gray-700" aria-hidden="true"></i>
+            </span>
+
+            <span class="flex-1 min-w-0">
+              <strong class="block text-lg text-text-primary dark:text-text-primary leading-snug">{{ .title }}</strong>
+              <span class="block mt-1 text-sm text-text-secondary dark:text-text-tertiary">{{ .subtitle }}</span>
+            </span>
+
+            {{ if $documentExists }}
+            <span class="flex-shrink-0 text-primary dark:text-white text-sm font-semibold opacity-80 group-hover:opacity-100 transition-opacity">
+              <span class="hidden sm:inline">{{ i18n "viewPdf" }}</span>
+              <i class="fas fa-arrow-up-right-from-square sm:ml-2" aria-hidden="true"></i>
+            </span>
+            {{ end }}
+          {{ if $documentExists }}
+          </a>
+          {{ else }}
+          </article>
+          {{ end }}
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    </div>
+
+    <div class="certificate-privacy-note mt-10 flex items-start gap-3 bg-bg-secondary border border-border-primary rounded-xl px-5 py-4 text-sm text-text-secondary dark:text-text-tertiary">
+      <i class="fas fa-shield-halved text-primary dark:text-primary-light mt-0.5" aria-hidden="true"></i>
+      <p>{{ i18n "documentPrivacyNotice" }}</p>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -39,3 +39,189 @@ other = "基本信息"
 
 [relatedContent]
 other = "相关内容"
+
+[educationHistory]
+other = "教育经历"
+
+[blogTopics]
+other = "主要内容方向"
+
+[machineLearning]
+other = "机器学习"
+
+[machineLearningSummary]
+other = "算法直觉、代码实践与模型评估。"
+
+[dataAnalysis]
+other = "数据分析"
+
+[dataAnalysisSummary]
+other = "数据清洗、统计推断与可视化。"
+
+[energyEngineering]
+other = "能源工程"
+
+[energyEngineeringSummary]
+other = "氢能、热力过程与交叉研究记录。"
+
+[latestNote]
+other = "最新笔记"
+
+[backToAllNotes]
+other = "返回全部笔记"
+
+[minutesRead]
+other = "分钟阅读"
+
+[articleToc]
+other = "本文目录"
+
+[noteRevisionNotice]
+other = "这是一份持续修订的个人学习笔记。如发现疏漏，欢迎通过邮件或 GitHub 与我交流。"
+
+[adjacentPosts]
+other = "相邻文章"
+
+[previousPost]
+other = "上一篇"
+
+[nextPost]
+other = "下一篇"
+
+[blogPostList]
+other = "博客文章列表"
+
+[notesArchive]
+other = "笔记归档"
+
+[postsCount]
+other = "篇"
+
+[searchNotes]
+other = "搜索学习笔记"
+
+[searchPlaceholder]
+other = "搜索标题、标签或关键词…"
+
+[all]
+other = "全部"
+
+[noMatchingNotes]
+other = "没有找到匹配的笔记"
+
+[blogProfileAndCategories]
+other = "博客信息与分类"
+
+[backToBlogHome]
+other = "返回博客首页"
+
+[profilePhoto]
+other = "头像"
+
+[blogProfileBio]
+other = "能源动力 × 数据科学<br>记录理解，也记录问题"
+
+[contactMethods]
+other = "联系方式"
+
+[sendEmail]
+other = "发送邮件"
+
+[rssFeed]
+other = "RSS 订阅"
+
+[categories]
+other = "分类 / Categories"
+
+[allNotes]
+other = "全部笔记"
+
+[backToHomepage]
+other = "返回个人主页"
+
+[newNote]
+other = "新建笔记"
+
+[newNoteTitlePrompt]
+other = "请输入新笔记的标题"
+
+[newNoteSaveHint]
+other = "保存时请选择 content/zh/blog/ 目录。"
+
+[newNoteSaved]
+other = "笔记已创建，可以开始编辑了。"
+
+[newNoteDownloaded]
+other = "浏览器不支持直接保存，模板已下载；请将文件移动到 content/zh/blog/。"
+
+[newNoteFailed]
+other = "创建失败，请重试。"
+
+[noItemsYet]
+other = "暂无内容"
+
+[contentComingSoon]
+other = "添加页面后，内容将显示在这里。"
+
+[certainlyNotHere]
+other = "这里似乎没有你要找的内容。"
+
+[pageNotFound]
+other = "页面未找到"
+
+[pageNotFoundSubtitle]
+other = "你访问的页面不存在或已被移动。"
+
+[goHome]
+other = "返回首页"
+
+[contactInformation]
+other = "联系信息"
+
+[sendMeAMessage]
+other = "给我留言"
+
+[contactFormLabel]
+other = "联系表单"
+
+[contactFormLabelNameLabel]
+other = "姓名"
+
+[contactFormLabelEmailLabel]
+other = "邮箱"
+
+[contactFormLabelSubjectLabel]
+other = "主题"
+
+[contactFormLabelMessageLabel]
+other = "留言"
+
+[contactFormSendBtnLabel]
+other = "发送"
+
+[viewOnGithub]
+other = "在 GitHub 查看"
+
+[viewPdf]
+other = "查看 PDF"
+
+[documentPrivacyNotice]
+other = "文档可能包含个人编号等信息，请仅在需要时打开查看。"
+
+[fullscreen]
+other = "全屏"
+
+[demoImageAlt]
+other = "演示图片"
+
+[galleryNotFound]
+other = "未找到图片库"
+
+[iframeIdRequired]
+other = "需要提供 iframe ID"
+
+[vimeoPlayerTitle]
+other = "Vimeo 视频播放器"
+
+[youtubePlayerTitle]
+other = "YouTube 视频播放器"

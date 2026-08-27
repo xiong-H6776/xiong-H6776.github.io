@@ -1,0 +1,61 @@
+{{ define "main" }}
+  {{ $blog := .CurrentSection }}
+  {{ $pages := $blog.RegularPages.ByDate.Reverse }}
+  {{ $categoryScratch := newScratch }}
+  {{ $categoryScratch.Set "items" (slice) }}
+  {{ range $pages }}
+    {{ range (.Params.categories | default (slice)) }}
+      {{ $categoryScratch.Add "items" (slice .) }}
+    {{ end }}
+  {{ end }}
+  {{ $categories := ($categoryScratch.Get "items") | uniq | sort }}
+
+  {{ partial "blog/styles.html" . }}
+  <section class="xh-blog-shell">
+    {{ partial "blog/profile.html" (dict "Context" . "Pages" $pages "Blog" $blog "Categories" $categories) }}
+    {{ partial "blog/post-list.html" (dict "Context" . "Pages" $pages "Categories" $categories) }}
+
+    <main class="xh-blog-main">
+      <article class="xh-blog-article">
+        <header class="xh-blog-article-header">
+          <a class="xh-blog-kicker" href="{{ $blog.RelPermalink }}"><i class="fas fa-arrow-left"></i> {{ i18n "backToAllNotes" }}</a>
+          <h1>{{ .Title }}</h1>
+          <div class="xh-blog-article-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}"><i class="far fa-calendar"></i> {{ .Date.Format (.Site.Params.article_date_format | default "2006-01-02") }}</time>
+            <span><i class="far fa-clock"></i> {{ .ReadingTime }} {{ i18n "minutesRead" }}</span>
+          </div>
+          {{ with .Params.tags }}
+            <div class="xh-blog-article-tags">
+              {{ range . }}<span>#{{ . }}</span>{{ end }}
+            </div>
+          {{ end }}
+        </header>
+
+        {{ if .Fragments.Headings }}
+          <aside class="xh-blog-toc" aria-label="{{ i18n "articleToc" }}">
+            <div class="xh-blog-toc__title"><i class="fas fa-list-ul"></i> {{ i18n "articleToc" }}</div>
+            {{ .TableOfContents }}
+          </aside>
+        {{ end }}
+
+        <div class="xh-blog-article-content">
+          {{ .Content }}
+        </div>
+
+        <footer class="xh-blog-note-footer">
+          <p>{{ i18n "noteRevisionNotice" }}</p>
+          {{ if or .PrevInSection .NextInSection }}
+            <nav class="xh-blog-adjacent" aria-label="{{ i18n "adjacentPosts" }}">
+              {{ with .PrevInSection }}
+                <a href="{{ .RelPermalink }}">{{ i18n "previousPost" }}<strong>{{ .Title }}</strong></a>
+              {{ end }}
+              {{ with .NextInSection }}
+                <a href="{{ .RelPermalink }}">{{ i18n "nextPost" }}<strong>{{ .Title }}</strong></a>
+              {{ end }}
+            </nav>
+          {{ end }}
+        </footer>
+      </article>
+    </main>
+  </section>
+{{ end }}

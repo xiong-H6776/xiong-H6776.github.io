@@ -30,7 +30,7 @@
       <div class="text-center lg:text-left mt-8 md:mt-0" style="width: 100%; max-width: 600px; min-width: 300px;">
         <!-- Greeting -->
         <div class="mb-4 mt-4 md:mt-0 hero-text-element" data-animation="greeting">
-          <span class="hero-text-accent font-medium text-lg block text-gray-700 dark:text-white">你好，我是</span>
+          <span class="hero-text-accent font-medium text-lg block text-gray-700 dark:text-white">{{ i18n "helloIm" }}</span>
         </div>
         <!-- Name -->
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-heading leading-tight hero-name hero-text-element text-gray-900 dark:text-white" data-animation="name">
@@ -48,10 +48,10 @@
         <!-- Action buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end hero-text-element" data-animation="buttons">
           <a href="#contact" class="bg-bg text-primary dark:text-white px-8 py-4 rounded-lg font-semibold hero-button button-hover">
-            联系我
+            {{ i18n "getInTouch" }}
           </a>
           <a href="{{ .Site.Params.resume_url }}" target="_blank" rel="noopener" class="bg-bg text-primary dark:text-white px-8 py-4 rounded-lg font-semibold hero-button button-hover">
-            查看简历
+            {{ i18n "viewCV" }}
           </a>
         </div>
         <!-- Social links -->

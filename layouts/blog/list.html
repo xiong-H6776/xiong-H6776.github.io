@@ -1,0 +1,54 @@
+{{ define "main" }}
+  {{ $pages := .RegularPages.ByDate.Reverse }}
+  {{ $categoryScratch := newScratch }}
+  {{ $categoryScratch.Set "items" (slice) }}
+  {{ range $pages }}
+    {{ range (.Params.categories | default (slice)) }}
+      {{ $categoryScratch.Add "items" (slice .) }}
+    {{ end }}
+  {{ end }}
+  {{ $categories := ($categoryScratch.Get "items") | uniq | sort }}
+
+  {{ partial "blog/styles.html" . }}
+  <section class="xh-blog-shell">
+    {{ partial "blog/profile.html" (dict "Context" . "Pages" $pages "Blog" . "Categories" $categories) }}
+    {{ partial "blog/post-list.html" (dict "Context" . "Pages" $pages "Categories" $categories) }}
+
+    <main class="xh-blog-main">
+      <div class="xh-blog-welcome">
+        <span class="xh-blog-kicker"><i class="fas fa-pen-nib"></i> XIONG HAO · NOTES</span>
+        <h1>{{ .Title }}</h1>
+        <p class="xh-blog-lead">{{ .Description }}</p>
+        {{ with .Content }}<div class="xh-blog-welcome__content">{{ . }}</div>{{ end }}
+
+        <div class="xh-blog-topic-grid" aria-label="{{ i18n "blogTopics" }}">
+          <article class="xh-blog-topic">
+            <i class="fas fa-brain" aria-hidden="true"></i>
+            <h2>{{ i18n "machineLearning" }}</h2>
+            <p>{{ i18n "machineLearningSummary" }}</p>
+          </article>
+          <article class="xh-blog-topic">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <h2>{{ i18n "dataAnalysis" }}</h2>
+            <p>{{ i18n "dataAnalysisSummary" }}</p>
+          </article>
+          <article class="xh-blog-topic">
+            <i class="fas fa-bolt" aria-hidden="true"></i>
+            <h2>{{ i18n "energyEngineering" }}</h2>
+            <p>{{ i18n "energyEngineeringSummary" }}</p>
+          </article>
+        </div>
+
+        {{ with index $pages 0 }}
+          <a class="xh-blog-latest" href="{{ .RelPermalink }}">
+            <span>
+              <small>{{ i18n "latestNote" }} · {{ .Date.Format "2006-01-02" }}</small>
+              <strong>{{ .Title }}</strong>
+            </span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        {{ end }}
+      </div>
+    </main>
+  </section>
+{{ end }}

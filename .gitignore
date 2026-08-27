@@ -3,6 +3,7 @@
 /node_modules/
 /.hugo_build.lock
 /hugo_stats.json
+/static/files/certificates/*.pdf
 
 .DS_Store
 Thumbs.db

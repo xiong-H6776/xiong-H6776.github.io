@@ -26,7 +26,7 @@
             <a href="{{ printf "%s%s" $.Site.Home.RelPermalink .URL }}" class="nav-link section-link text-text-primary dark:text-text-primary" data-section="{{ .URL }}">{{ .Name }}</a>
           {{ else }}
             <!-- Regular page links -->
-            <a href="{{ .URL | relLangURL }}" class="nav-link text-text-primary dark:text-text-primary">{{ .Name }}</a>
+            <a href="{{ if hasPrefix .URL "/files/" }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}" class="nav-link text-text-primary dark:text-text-primary">{{ .Name }}</a>
           {{ end }}
           {{ end }}
         {{ end }}
@@ -36,6 +36,7 @@
         {{/* Determine current language flag */}}
         {{ $cur := $.Site.Language.Lang }}
         {{ $currentFlag := "🏳️" }}
+        {{ if eq $cur "zh" }}{{ $currentFlag = "🇨🇳" }}{{ end }}
         {{ if eq $cur "en" }}{{ $currentFlag = "🇬🇧" }}{{ end }}
         {{ if eq $cur "es" }}{{ $currentFlag = "🇨🇱" }}{{ end }}
         {{ if eq $cur "fr" }}{{ $currentFlag = "🇫🇷" }}{{ end }}
@@ -43,15 +44,17 @@
         <div class="relative group">
           <a href="#" class="nav-link text-text-primary dark:text-text-primary flex items-center" aria-label="Language switcher">
             <span class="text-lg mr-1">{{ $currentFlag }}</span>
+            <span class="text-sm">{{ $.Site.Language.LanguageName }}</span>
             <i class="fas fa-chevron-down ml-1 text-sm"></i>
           </a>
           <div class="submenu absolute right-0 top-full mt-2 bg-bg dark:bg-bg shadow-lg rounded-lg z-50 min-w-[8rem] opacity-0 invisible">
-            {{ $order := slice "fr" "en" "es" "bg" }}
+            {{ $order := slice "zh" "en" "fr" "es" "bg" }}
             {{ range $order }}
               {{ $code := . }}
               {{ range where $homes "Language.Lang" $code }}
                 {{ $lang := .Language.Lang }}
                 {{ $flag := "🏳️" }}
+                {{ if eq $lang "zh" }}{{ $flag = "🇨🇳" }}{{ end }}
                 {{ if eq $lang "fr" }}{{ $flag = "🇫🇷" }}{{ end }}
                 {{ if eq $lang "en" }}{{ $flag = "🇬🇧" }}{{ end }}
                 {{ if eq $lang "es" }}{{ $flag = "🇨🇱" }}{{ end }}
@@ -126,7 +129,7 @@
           </a>
         {{ else }}
           <!-- Regular page links -->
-          <a href="{{ .URL | relLangURL }}" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-text-primary dark:text-text-primary">
+          <a href="{{ if hasPrefix .URL "/files/" }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-text-primary dark:text-text-primary">
             {{ .Name }}
           </a>
         {{ end }}
@@ -141,13 +144,14 @@
       {{ if gt (len $homes) 1 }}
       <div class="px-3 py-2 border-t border-border-primary dark:border-border-primary">
         <div class="flex items-center space-x-3">
-          {{ $order := slice "fr" "en" "es" "bg" }}
+          {{ $order := slice "zh" "en" "fr" "es" "bg" }}
           {{ range $order }}
             {{ $code := . }}
             {{ range where $homes "Language.Lang" $code }}
-              {{ $lang := .Language.Lang }}
-              {{ $flag := "🏳️" }}
-              {{ if eq $lang "fr" }}{{ $flag = "🇫🇷" }}{{ end }}
+            {{ $lang := .Language.Lang }}
+            {{ $flag := "🏳️" }}
+            {{ if eq $lang "zh" }}{{ $flag = "🇨🇳" }}{{ end }}
+            {{ if eq $lang "fr" }}{{ $flag = "🇫🇷" }}{{ end }}
               {{ if eq $lang "en" }}{{ $flag = "🇬🇧" }}{{ end }}
               {{ if eq $lang "es" }}{{ $flag = "🇨🇱" }}{{ end }}
               {{ if eq $lang "bg" }}{{ $flag = "🇧🇬" }}{{ end }}
@@ -322,6 +326,3 @@
 
   </script>
 </nav>
-
-
-

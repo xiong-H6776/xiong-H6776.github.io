@@ -1,0 +1,44 @@
+{{ $ctx := .Context }}
+{{ $pages := .Pages }}
+{{ $blog := .Blog }}
+{{ $categories := .Categories }}
+<aside class="xh-blog-profile" aria-label="{{ i18n "blogProfileAndCategories" }}">
+  <a href="{{ $blog.RelPermalink }}" aria-label="{{ i18n "backToBlogHome" }}">
+    <img class="xh-blog-profile__avatar" src="{{ $ctx.Site.Params.profile_image }}" alt="{{ $ctx.Site.Params.name }} · {{ i18n "profilePhoto" }}">
+  </a>
+  <div class="xh-blog-profile__name">{{ $ctx.Site.Params.name }}</div>
+  <p class="xh-blog-profile__bio">{{ i18n "blogProfileBio" | safeHTML }}</p>
+
+  <div class="xh-blog-socials" aria-label="{{ i18n "contactMethods" }}">
+    {{ with $ctx.Site.Params.github_url }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    {{ end }}
+    {{ with $ctx.Site.Params.email }}
+      <a href="mailto:{{ . }}" aria-label="{{ i18n "sendEmail" }}"><i class="fas fa-envelope"></i></a>
+    {{ end }}
+    <a href="{{ $blog.RelPermalink }}index.xml" aria-label="{{ i18n "rssFeed" }}"><i class="fas fa-rss"></i></a>
+  </div>
+
+  <div class="xh-blog-category-title">{{ i18n "categories" }}</div>
+  <div class="xh-blog-category-list" data-blog-categories>
+    <button class="xh-blog-category is-active" type="button" data-blog-category="all">
+      <span>{{ i18n "allNotes" }}</span><small>{{ len $pages }}</small>
+    </button>
+    {{ range $categories }}
+      {{ $category := . }}
+      {{ $count := 0 }}
+      {{ range $pages }}
+        {{ if in (.Params.categories | default (slice)) $category }}
+          {{ $count = add $count 1 }}
+        {{ end }}
+      {{ end }}
+      <button class="xh-blog-category" type="button" data-blog-category="{{ $category }}">
+        <span>{{ $category }}</span><small>{{ $count }}</small>
+      </button>
+    {{ end }}
+  </div>
+
+  <a class="xh-blog-home-link" href="{{ $ctx.Site.Home.RelPermalink }}">
+    <i class="fas fa-arrow-left"></i><span>{{ i18n "backToHomepage" }}</span>
+  </a>
+</aside>

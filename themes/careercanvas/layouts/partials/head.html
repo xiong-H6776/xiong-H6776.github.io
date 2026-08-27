@@ -15,6 +15,9 @@
 <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
 <meta name="author" content="{{ .Site.Params.author | default .Site.Params.name }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
+{{ range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
+{{ end }}
 
 <!-- 🌐 Open Graph -->
 <meta property="og:type" content="website" />

@@ -1,0 +1,227 @@
+[helloIm]
+other = "Hello, I'm"
+
+[getInTouch]
+other = "Get in Touch"
+
+[viewCV]
+other = "View CV"
+
+[aboutMe]
+other = "About Me"
+
+[aboutName]
+other = "About"
+
+[connectOnLinkedIn]
+other = "Connect on LinkedIn"
+
+[downloadResume]
+other = "Download CV"
+
+[interests]
+other = "Research Interests"
+
+[keyAchievements]
+other = "Highlights"
+
+[languages]
+other = "Languages"
+
+[learnMore]
+other = "Learn More"
+
+[more]
+other = "More"
+
+[quickFacts]
+other = "Quick Facts"
+
+[relatedContent]
+other = "Related Content"
+
+[educationHistory]
+other = "Education"
+
+[blogTopics]
+other = "Main Topics"
+
+[machineLearning]
+other = "Machine Learning"
+
+[machineLearningSummary]
+other = "Algorithmic intuition, coding practice, and model evaluation."
+
+[dataAnalysis]
+other = "Data Analysis"
+
+[dataAnalysisSummary]
+other = "Data cleaning, statistical inference, and visualization."
+
+[energyEngineering]
+other = "Energy Engineering"
+
+[energyEngineeringSummary]
+other = "Notes on hydrogen energy, thermodynamic processes, and interdisciplinary research."
+
+[latestNote]
+other = "Latest Note"
+
+[backToAllNotes]
+other = "Back to All Notes"
+
+[minutesRead]
+other = "min read"
+
+[articleToc]
+other = "On This Page"
+
+[noteRevisionNotice]
+other = "This personal study note is revised over time. If you notice an error or omission, feel free to contact me by email or GitHub."
+
+[adjacentPosts]
+other = "Adjacent Posts"
+
+[previousPost]
+other = "Previous"
+
+[nextPost]
+other = "Next"
+
+[blogPostList]
+other = "Blog Post List"
+
+[notesArchive]
+other = "Notes Archive"
+
+[postsCount]
+other = "posts"
+
+[searchNotes]
+other = "Search Notes"
+
+[searchPlaceholder]
+other = "Search titles, tags, or keywords…"
+
+[all]
+other = "All"
+
+[noMatchingNotes]
+other = "No matching notes found"
+
+[blogProfileAndCategories]
+other = "Blog Information and Categories"
+
+[backToBlogHome]
+other = "Back to Blog Home"
+
+[profilePhoto]
+other = "profile photo"
+
+[blogProfileBio]
+other = "Energy Engineering × Data Science<br>Documenting insights and open questions"
+
+[contactMethods]
+other = "Contact Methods"
+
+[sendEmail]
+other = "Send Email"
+
+[rssFeed]
+other = "RSS Feed"
+
+[categories]
+other = "Categories"
+
+[allNotes]
+other = "All Notes"
+
+[backToHomepage]
+other = "Back to Homepage"
+
+[newNote]
+other = "New Note"
+
+[newNoteTitlePrompt]
+other = "Enter a title for the new note"
+
+[newNoteSaveHint]
+other = "Save the file in content/en/blog/."
+
+[newNoteSaved]
+other = "The note has been created and is ready to edit."
+
+[newNoteDownloaded]
+other = "Direct saving is unavailable in this browser. The template was downloaded; move it to content/en/blog/."
+
+[newNoteFailed]
+other = "The note could not be created. Please try again."
+
+[noItemsYet]
+other = "No Items Yet"
+
+[contentComingSoon]
+other = "Content will appear here once pages are added to this section."
+
+[certainlyNotHere]
+other = "The page you are looking for does not appear to be here."
+
+[pageNotFound]
+other = "Page Not Found"
+
+[pageNotFoundSubtitle]
+other = "The page you requested does not exist or may have moved."
+
+[goHome]
+other = "Go Home"
+
+[contactInformation]
+other = "Contact Information"
+
+[sendMeAMessage]
+other = "Send Me a Message"
+
+[contactFormLabel]
+other = "Contact Form"
+
+[contactFormLabelNameLabel]
+other = "Name"
+
+[contactFormLabelEmailLabel]
+other = "Email"
+
+[contactFormLabelSubjectLabel]
+other = "Subject"
+
+[contactFormLabelMessageLabel]
+other = "Message"
+
+[contactFormSendBtnLabel]
+other = "Send"
+
+[viewOnGithub]
+other = "View on GitHub"
+
+[viewPdf]
+other = "View PDF"
+
+[documentPrivacyNotice]
+other = "Documents may contain personal identifiers. Open them only when needed."
+
+[fullscreen]
+other = "Fullscreen"
+
+[demoImageAlt]
+other = "Demo image"
+
+[galleryNotFound]
+other = "Gallery not found"
+
+[iframeIdRequired]
+other = "An iframe ID is required"
+
+[vimeoPlayerTitle]
+other = "Vimeo video player"
+
+[youtubePlayerTitle]
+other = "YouTube video player"
