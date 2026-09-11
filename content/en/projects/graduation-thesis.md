@@ -6,9 +6,11 @@ weight: 10
 tags: ["Hydrogen Engine", "Knock Modeling", "Machine Learning", "MATLAB"]
 attachments:
   - title: "Undergraduate thesis"
-    url: "/files/projects/hydrogen-engine/hydrogen-engine-thesis.pdf"
+    filename: "U202211429-熊浩-毕业设计（论文）.pdf"
+    url: "/files/projects/hydrogen-engine/U202211429-熊浩-毕业设计（论文）.pdf"
   - title: "Thesis defense slides"
-    url: "/files/projects/hydrogen-engine/hydrogen-engine-defense.pdf"
+    filename: "毕业答辩PPT-熊浩-终稿.pptx"
+    url: "/files/projects/hydrogen-engine/毕业答辩PPT-熊浩-终稿.pptx"
 ---
 
 ## Project Overview
@@ -59,4 +61,4 @@ Knock onset was modeled with a Livengood–Wu integral representing cumulative e
 ## Related Materials
 
 - Project code: archived locally; public release will follow code organization, execution checks, and removal of sensitive information.
-- The undergraduate thesis and defense slides are available as PDFs; click their names under “Project Attachments” to open them.
+- The undergraduate thesis is available as a PDF and the defense slides as a PPTX; click the corresponding filename under “Project Attachments” to open it.

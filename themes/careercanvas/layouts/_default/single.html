@@ -79,7 +79,7 @@
             <div class="space-y-2">
               {{ range . }}
               <p class="text-sm leading-relaxed text-text-secondary dark:text-text-secondary">
-                <span class="font-medium text-text-primary dark:text-text-primary">{{ i18n "attachmentPrefix" }}</span><span>{{ .title }}</span><span>（<a href="{{ .url | relURL }}" target="_blank" rel="noopener noreferrer" class="text-second dark:text-second-light hover:underline underline-offset-2">{{ i18n "attachmentLink" }}</a>）</span>
+                <span class="font-medium text-text-primary dark:text-text-primary">{{ i18n "attachmentPrefix" }}</span><span>{{ .title }}</span><span>（<a href="{{ .url | relURL }}" target="_blank" rel="noopener noreferrer" class="text-second dark:text-second-light hover:underline underline-offset-2">{{ .filename }}</a>）</span>
               </p>
               {{ end }}
             </div>

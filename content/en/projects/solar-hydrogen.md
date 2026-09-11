@@ -6,11 +6,14 @@ weight: 20
 tags: ["Solar Energy", "Hydrogen from Biomass", "COMSOL", "SolidWorks"]
 attachments:
   - title: "Competition project report"
-    url: "/files/projects/solar-hydrogen/solar-hydrogen-report.pdf"
+    filename: "十号节减说明书(1).pdf"
+    url: "/files/projects/solar-hydrogen/十号节减说明书(1).pdf"
   - title: "Technical disclosure"
-    url: "/files/projects/solar-hydrogen/solar-hydrogen-disclosure.pdf"
+    filename: "交底书：一种聚光太阳能驱动藻类制氢固碳技术与装置.pdf"
+    url: "/files/projects/solar-hydrogen/交底书：一种聚光太阳能驱动藻类制氢固碳技术与装置.pdf"
   - title: "Project presentation"
-    url: "/files/projects/solar-hydrogen/solar-hydrogen-slides.pdf"
+    filename: "33号全新节减.pptx"
+    url: "/files/projects/solar-hydrogen/33号全新节减.pptx"
 ---
 
 ## Main Work
@@ -28,4 +31,4 @@ Building on the advantages of the AMSP biomass-to-hydrogen mechanism, I contribu
 - University-level Excellence Award in the National College Student Energy Conservation and Emission Reduction Competition
 - Second Prize in the National College Student Renewable Energy Competition
 
-The project report, technical disclosure, and presentation are available as PDFs; click their names under “Project Attachments” to open them.
+The project report and technical disclosure are available as PDFs, and the presentation as a PPTX; click the corresponding filename under “Project Attachments” to open it.

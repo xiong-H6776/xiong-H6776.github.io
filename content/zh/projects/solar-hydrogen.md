@@ -6,11 +6,14 @@ weight: 20
 tags: ["太阳能", "生物质制氢", "COMSOL", "SolidWorks"]
 attachments:
   - title: "竞赛项目说明书"
-    url: "/files/projects/solar-hydrogen/solar-hydrogen-report.pdf"
+    filename: "十号节减说明书(1).pdf"
+    url: "/files/projects/solar-hydrogen/十号节减说明书(1).pdf"
   - title: "技术交底书"
-    url: "/files/projects/solar-hydrogen/solar-hydrogen-disclosure.pdf"
+    filename: "交底书：一种聚光太阳能驱动藻类制氢固碳技术与装置.pdf"
+    url: "/files/projects/solar-hydrogen/交底书：一种聚光太阳能驱动藻类制氢固碳技术与装置.pdf"
   - title: "项目演示文稿"
-    url: "/files/projects/solar-hydrogen/solar-hydrogen-slides.pdf"
+    filename: "33号全新节减.pptx"
+    url: "/files/projects/solar-hydrogen/33号全新节减.pptx"
 ---
 
 ## 主要工作
@@ -28,4 +31,4 @@ attachments:
 - 全国大学生节能减排社会实践与科技竞赛校级优秀奖
 - 全国大学生可再生能源竞赛二等奖
 
-竞赛说明书、技术交底书和项目演示文稿已提供 PDF 版本，可点击页面右侧“项目附件”中的对应名称打开。
+竞赛说明书和技术交底书提供 PDF 版本，项目演示文稿提供 PPTX 版本，可点击页面右侧“项目附件”中的对应文件名打开。

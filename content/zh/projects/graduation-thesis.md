@@ -6,9 +6,11 @@ weight: 10
 tags: ["氢内燃机", "爆震模型", "机器学习", "MATLAB"]
 attachments:
   - title: "毕业设计论文"
-    url: "/files/projects/hydrogen-engine/hydrogen-engine-thesis.pdf"
+    filename: "U202211429-熊浩-毕业设计（论文）.pdf"
+    url: "/files/projects/hydrogen-engine/U202211429-熊浩-毕业设计（论文）.pdf"
   - title: "毕业答辩演示"
-    url: "/files/projects/hydrogen-engine/hydrogen-engine-defense.pdf"
+    filename: "毕业答辩PPT-熊浩-终稿.pptx"
+    url: "/files/projects/hydrogen-engine/毕业答辩PPT-熊浩-终稿.pptx"
 ---
 
 ## 项目概述
@@ -57,4 +59,4 @@ attachments:
 - 完成本科毕业设计论文《氢内燃机爆震机理与唯象模型研究》。
 ## 相关资料
 - 项目代码：已有本地归档，待完成结构整理、运行验证和脱敏后公开。
-- 毕业设计论文与答辩演示已提供 PDF 版本，可点击页面右侧“项目附件”中的对应名称打开。
+- 毕业设计论文提供 PDF 版本，答辩演示提供 PPTX 版本，可点击页面右侧“项目附件”中的对应文件名打开。

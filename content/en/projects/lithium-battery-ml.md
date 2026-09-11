@@ -6,7 +6,8 @@ weight: 30
 tags: ["Solid-State Lithium Batteries", "Supervised Learning", "Random Forest", "Feature Engineering"]
 attachments:
   - title: "English project manuscript"
-    url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.pdf"
+    filename: "热膨胀系数预测-英文.pdf"
+    url: "/files/projects/lithium-battery-ml/热膨胀系数预测-英文.pdf"
 ---
 
 ## Project Overview

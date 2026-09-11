@@ -6,7 +6,8 @@ weight: 30
 tags: ["固态锂电池", "监督学习", "随机森林", "特征工程"]
 attachments:
   - title: "英文项目文稿"
-    url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.pdf"
+    filename: "热膨胀系数预测-英文.pdf"
+    url: "/files/projects/lithium-battery-ml/热膨胀系数预测-英文.pdf"
 ---
 
 ## 项目概述

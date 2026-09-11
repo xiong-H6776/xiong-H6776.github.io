@@ -46,9 +46,6 @@ other = "Project Attachments"
 [attachmentPrefix]
 other = "Attachment: "
 
-[attachmentLink]
-other = "File link"
-
 [educationHistory]
 other = "Education"
 

@@ -46,9 +46,6 @@ other = "项目附件"
 [attachmentPrefix]
 other = "附件："
 
-[attachmentLink]
-other = "文件链接"
-
 [educationHistory]
 other = "教育经历"
 
