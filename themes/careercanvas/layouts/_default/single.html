@@ -80,12 +80,7 @@
               {{ range . }}
               <p class="text-sm leading-relaxed text-text-secondary dark:text-text-secondary">
                 <span class="font-medium text-text-primary dark:text-text-primary">{{ i18n "attachmentPrefix" }}</span>
-                <span>{{ .title }}</span>
-                {{ with .files }}
-                <span>
-                  （{{ range $index, $file := . }}{{ if $index }}<span class="text-text-tertiary"> · </span>{{ end }}<a href="{{ $file.url | relURL }}" target="_blank" rel="noopener noreferrer" class="text-primary dark:text-primary-light hover:underline underline-offset-2">{{ $file.label }}</a>{{ end }}）
-                </span>
-                {{ end }}
+                <a href="{{ .url | relURL }}" target="_blank" rel="noopener noreferrer" class="text-primary dark:text-primary-light hover:underline underline-offset-2">{{ .title }}</a>
               </p>
               {{ end }}
             </div>

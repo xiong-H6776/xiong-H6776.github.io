@@ -6,11 +6,7 @@ weight: 30
 tags: ["固态锂电池", "监督学习", "随机森林", "特征工程"]
 attachments:
   - title: "英文项目文稿"
-    files:
-      - label: "PDF"
-        url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.pdf"
-      - label: "DOCX"
-        url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.docx"
+    url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.pdf"
 ---
 
 ## 项目概述
@@ -62,6 +58,6 @@ attachments:
 
 ## 相关资料
 
-- 项目文档：英文文稿已提供 PDF 预览版及原始 Word 版本，可从页面右侧的“项目附件”下载。
+- 项目文档：英文文稿已提供 PDF 版本，可点击页面右侧“项目附件”中的名称打开。
 - 数据与代码：当前资料目录中未保留可公开版本，待后续整理。
 - 模型图表与候选材料结果：收录于公开的英文项目文稿中。

@@ -6,11 +6,7 @@ weight: 30
 tags: ["Solid-State Lithium Batteries", "Supervised Learning", "Random Forest", "Feature Engineering"]
 attachments:
   - title: "English project manuscript"
-    files:
-      - label: "PDF"
-        url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.pdf"
-      - label: "DOCX"
-        url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.docx"
+    url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.pdf"
 ---
 
 ## Project Overview
@@ -62,6 +58,6 @@ The final architecture used a three-layer residual-cascade random forest. Each l
 
 ## Related Materials
 
-- Project document: PDF and original Word versions are available under “Project Attachments.”
+- Project document: the PDF is available by clicking its name under “Project Attachments.”
 - Data and code: no public-ready version is currently retained in the project materials.
 - Model figures and candidate-material results are included in the public English project manuscript.
