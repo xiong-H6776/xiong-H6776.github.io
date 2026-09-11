@@ -72,10 +72,29 @@
             </a>
             {{ end }}
           </div>
+
+          {{ with .Params.attachments }}
+          <div class="mt-7 pt-5 border-t border-border-primary dark:border-border-primary flex-shrink-0">
+            <h2 class="text-xl font-bold mb-3 text-text-primary dark:text-text-primary">{{ i18n "projectAttachments" }}</h2>
+            <div class="space-y-2">
+              {{ range . }}
+              <p class="text-sm leading-relaxed text-text-secondary dark:text-text-secondary">
+                <span class="font-medium text-text-primary dark:text-text-primary">{{ i18n "attachmentPrefix" }}</span>
+                <span>{{ .title }}</span>
+                {{ with .files }}
+                <span>
+                  （{{ range $index, $file := . }}{{ if $index }}<span class="text-text-tertiary"> · </span>{{ end }}<a href="{{ $file.url | relURL }}" target="_blank" rel="noopener noreferrer" class="text-primary dark:text-primary-light hover:underline underline-offset-2">{{ $file.label }}</a>{{ end }}）
+                </span>
+                {{ end }}
+              </p>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
         </div>
       </div>
       {{ end }}
     </div>
   </div>
 </section>
-{{ end }} 
+{{ end }}

@@ -4,6 +4,19 @@ description: "构建氢内燃机准维燃烧—唯象爆震一体化模型，并
 featured_image: "/images/projects/hydrogen-engine-knock.png"
 weight: 10
 tags: ["氢内燃机", "爆震模型", "机器学习", "MATLAB"]
+attachments:
+  - title: "毕业设计论文"
+    files:
+      - label: "PDF"
+        url: "/files/projects/hydrogen-engine/hydrogen-engine-thesis.pdf"
+      - label: "DOCX"
+        url: "/files/projects/hydrogen-engine/hydrogen-engine-thesis.docx"
+  - title: "毕业答辩演示"
+    files:
+      - label: "PDF"
+        url: "/files/projects/hydrogen-engine/hydrogen-engine-defense.pdf"
+      - label: "PPTX"
+        url: "/files/projects/hydrogen-engine/hydrogen-engine-defense.pptx"
 ---
 
 ## 项目概述
@@ -52,5 +65,4 @@ tags: ["氢内燃机", "爆震模型", "机器学习", "MATLAB"]
 - 完成本科毕业设计论文《氢内燃机爆震机理与唯象模型研究》。
 ## 相关资料
 - 项目代码：已有本地归档，待完成结构整理、运行验证和脱敏后公开。
-- 相关文档：模型流程图、验证图表及说明材料待整理。
-- 毕业设计论文：当前保存为 Word 版本，待生成或确认适合公开的 PDF 版本后补充下载链接。
+- 毕业设计论文与答辩演示已提供 PDF 预览版及原始文档，可从页面右侧的“项目附件”下载。

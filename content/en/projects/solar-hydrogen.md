@@ -4,6 +4,25 @@ description: "Coupled design of a two-tank thermal storage system and developmen
 featured_image: "/images/projects/solar-hydrogen.png"
 weight: 20
 tags: ["Solar Energy", "Hydrogen from Biomass", "COMSOL", "SolidWorks"]
+attachments:
+  - title: "Competition project report"
+    files:
+      - label: "PDF"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-report.pdf"
+      - label: "DOCX"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-report.docx"
+  - title: "Technical disclosure"
+    files:
+      - label: "PDF"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-disclosure.pdf"
+      - label: "DOCX"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-disclosure.docx"
+  - title: "Project presentation"
+    files:
+      - label: "PDF"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-slides.pdf"
+      - label: "PPTX"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-slides.pptx"
 ---
 
 ## Main Work
@@ -21,4 +40,4 @@ Building on the advantages of the AMSP biomass-to-hydrogen mechanism, I contribu
 - University-level Excellence Award in the National College Student Energy Conservation and Emission Reduction Competition
 - Second Prize in the National College Student Renewable Energy Competition
 
-Project images, equipment parameters, and full technical documentation are being organized.
+The project report, technical disclosure, and presentation are available in PDF and original editable formats under “Project Attachments.”

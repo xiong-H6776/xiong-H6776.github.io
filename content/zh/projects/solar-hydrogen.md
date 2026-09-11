@@ -4,6 +4,25 @@ description: "双罐储热系统耦合设计与太阳能制氢一体化反应釜
 featured_image: "/images/projects/solar-hydrogen.png"
 weight: 20
 tags: ["太阳能", "生物质制氢", "COMSOL", "SolidWorks"]
+attachments:
+  - title: "竞赛项目说明书"
+    files:
+      - label: "PDF"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-report.pdf"
+      - label: "DOCX"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-report.docx"
+  - title: "技术交底书"
+    files:
+      - label: "PDF"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-disclosure.pdf"
+      - label: "DOCX"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-disclosure.docx"
+  - title: "项目演示文稿"
+    files:
+      - label: "PDF"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-slides.pdf"
+      - label: "PPTX"
+        url: "/files/projects/solar-hydrogen/solar-hydrogen-slides.pptx"
 ---
 
 ## 主要工作
@@ -21,4 +40,4 @@ tags: ["太阳能", "生物质制氢", "COMSOL", "SolidWorks"]
 - 全国大学生节能减排社会实践与科技竞赛校级优秀奖
 - 全国大学生可再生能源竞赛二等奖
 
-项目图片、装置参数和完整技术说明待整理。
+竞赛说明书、技术交底书和项目演示文稿已提供 PDF 预览版及原始文档，可从页面右侧的“项目附件”下载。

@@ -4,6 +4,19 @@ description: "Development of an integrated quasi-dimensional combustion and phen
 featured_image: "/images/projects/hydrogen-engine-knock.png"
 weight: 10
 tags: ["Hydrogen Engine", "Knock Modeling", "Machine Learning", "MATLAB"]
+attachments:
+  - title: "Undergraduate thesis"
+    files:
+      - label: "PDF"
+        url: "/files/projects/hydrogen-engine/hydrogen-engine-thesis.pdf"
+      - label: "DOCX"
+        url: "/files/projects/hydrogen-engine/hydrogen-engine-thesis.docx"
+  - title: "Thesis defense slides"
+    files:
+      - label: "PDF"
+        url: "/files/projects/hydrogen-engine/hydrogen-engine-defense.pdf"
+      - label: "PPTX"
+        url: "/files/projects/hydrogen-engine/hydrogen-engine-defense.pptx"
 ---
 
 ## Project Overview
@@ -54,5 +67,4 @@ Knock onset was modeled with a Livengood–Wu integral representing cumulative e
 ## Related Materials
 
 - Project code: archived locally; public release will follow code organization, execution checks, and removal of sensitive information.
-- Documentation: model flowcharts, validation figures, and explanatory materials are being organized.
-- Undergraduate thesis: currently stored as a Word document; a public PDF will be added after an appropriate version is prepared and confirmed.
+- The undergraduate thesis and defense slides are available in both PDF and original editable formats under “Project Attachments.”

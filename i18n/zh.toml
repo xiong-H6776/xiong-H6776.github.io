@@ -40,6 +40,12 @@ other = "基本信息"
 [relatedContent]
 other = "相关内容"
 
+[projectAttachments]
+other = "项目附件"
+
+[attachmentPrefix]
+other = "附件："
+
 [educationHistory]
 other = "教育经历"
 

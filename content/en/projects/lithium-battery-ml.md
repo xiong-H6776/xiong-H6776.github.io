@@ -4,6 +4,13 @@ description: "Supervised-learning prediction of thermal expansion coefficients f
 featured_image: "/images/projects/lithium-battery-ml.png"
 weight: 30
 tags: ["Solid-State Lithium Batteries", "Supervised Learning", "Random Forest", "Feature Engineering"]
+attachments:
+  - title: "English project manuscript"
+    files:
+      - label: "PDF"
+        url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.pdf"
+      - label: "DOCX"
+        url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.docx"
 ---
 
 ## Project Overview
@@ -51,10 +58,10 @@ The final architecture used a three-layer residual-cascade random forest. Each l
 
 ## Output
 
-- This work is retained as a research-practice project. It does not currently have a formal paper, award, or code release suitable for public presentation.
+- This work is retained as a research-practice project, and its English project manuscript is now available for reference.
 
 ## Related Materials
 
-- Project document: an English Word version is available locally and will be reviewed before any public release.
+- Project document: PDF and original Word versions are available under “Project Attachments.”
 - Data and code: no public-ready version is currently retained in the project materials.
-- Model figures and candidate-material results: stored in the existing project document and not currently available for download.
+- Model figures and candidate-material results are included in the public English project manuscript.

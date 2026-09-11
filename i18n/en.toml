@@ -40,6 +40,12 @@ other = "Quick Facts"
 [relatedContent]
 other = "Related Content"
 
+[projectAttachments]
+other = "Project Attachments"
+
+[attachmentPrefix]
+other = "Attachment: "
+
 [educationHistory]
 other = "Education"
 

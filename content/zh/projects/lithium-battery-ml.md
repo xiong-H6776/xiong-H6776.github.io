@@ -4,6 +4,13 @@ description: "使用监督学习预测含锂化合物的热膨胀系数，并开
 featured_image: "/images/projects/lithium-battery-ml.png"
 weight: 30
 tags: ["固态锂电池", "监督学习", "随机森林", "特征工程"]
+attachments:
+  - title: "英文项目文稿"
+    files:
+      - label: "PDF"
+        url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.pdf"
+      - label: "DOCX"
+        url: "/files/projects/lithium-battery-ml/lithium-battery-tec-paper.docx"
 ---
 
 ## 项目概述
@@ -51,10 +58,10 @@ tags: ["固态锂电池", "监督学习", "随机森林", "特征工程"]
 
 ## 成果
 
-- 该项目作为科研实践记录，暂无适合对外公开的正式论文、奖项或代码成果。
+- 该项目作为科研实践记录，现公开英文项目文稿供查阅。
 
 ## 相关资料
 
-- 项目文档：现存一份英文 Word 版本，待进一步整理后再决定是否公开。
+- 项目文档：英文文稿已提供 PDF 预览版及原始 Word 版本，可从页面右侧的“项目附件”下载。
 - 数据与代码：当前资料目录中未保留可公开版本，待后续整理。
-- 模型图表与候选材料结果：保存在现有项目文档中，暂不提供下载链接。
+- 模型图表与候选材料结果：收录于公开的英文项目文稿中。
