@@ -11,6 +11,9 @@ attachments:
   - title: "毕业答辩演示"
     filename: "毕业答辩PPT-熊浩-终稿.pptx"
     url: "/files/projects/hydrogen-engine/毕业答辩PPT-熊浩-终稿.pptx"
+  - title: "附录数据文件"
+    filename: "氢内燃机爆震研究-附录文件.zip"
+    url: "/files/projects/hydrogen-engine/氢内燃机爆震研究-附录文件.zip"
 ---
 
 ## 项目概述
@@ -60,3 +63,4 @@ attachments:
 ## 相关资料
 - 项目代码：已有本地归档，待完成结构整理、运行验证和脱敏后公开。
 - 毕业设计论文提供 PDF 版本，答辩演示提供 PPTX 版本，可点击页面右侧“项目附件”中的对应文件名打开。
+- 附录数据：层流火焰速度训练集、τ 查找表及试验/仿真缸压数据已打包为 ZIP 公开。

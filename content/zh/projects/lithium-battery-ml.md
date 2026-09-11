@@ -8,6 +8,9 @@ attachments:
   - title: "英文项目文稿"
     filename: "热膨胀系数预测-英文.pdf"
     url: "/files/projects/lithium-battery-ml/热膨胀系数预测-英文.pdf"
+  - title: "CIF 材料数据"
+    filename: "固态锂电池热膨胀系数预测-材料数据cif.zip"
+    url: "/files/projects/lithium-battery-ml/固态锂电池热膨胀系数预测-材料数据cif.zip"
 ---
 
 ## 项目概述
@@ -59,6 +62,6 @@ attachments:
 
 ## 相关资料
 
-- 项目文档：英文文稿已提供 PDF 版本，可点击页面右侧“项目附件”中的名称打开。
-- 数据与代码：当前资料目录中未保留可公开版本，待后续整理。
+- 项目文档：英文文稿已提供 PDF 版本，可点击页面右侧“项目附件”中的对应文件名打开。
+- 材料数据与代码：CIF 原始及处理后材料文件已打包为 ZIP 公开；模型代码当前未保留可公开版本。
 - 模型图表与候选材料结果：收录于公开的英文项目文稿中。

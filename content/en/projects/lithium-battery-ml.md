@@ -8,6 +8,9 @@ attachments:
   - title: "English project manuscript"
     filename: "热膨胀系数预测-英文.pdf"
     url: "/files/projects/lithium-battery-ml/热膨胀系数预测-英文.pdf"
+  - title: "CIF material data"
+    filename: "固态锂电池热膨胀系数预测-材料数据cif.zip"
+    url: "/files/projects/lithium-battery-ml/固态锂电池热膨胀系数预测-材料数据cif.zip"
 ---
 
 ## Project Overview
@@ -59,6 +62,6 @@ The final architecture used a three-layer residual-cascade random forest. Each l
 
 ## Related Materials
 
-- Project document: the PDF is available by clicking its name under “Project Attachments.”
-- Data and code: no public-ready version is currently retained in the project materials.
+- Project document: the PDF is available by clicking its filename under “Project Attachments.”
+- Material data and code: the original and processed CIF files are publicly available as a ZIP archive; no public-ready model code is currently retained.
 - Model figures and candidate-material results are included in the public English project manuscript.

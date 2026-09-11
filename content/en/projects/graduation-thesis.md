@@ -11,6 +11,9 @@ attachments:
   - title: "Thesis defense slides"
     filename: "毕业答辩PPT-熊浩-终稿.pptx"
     url: "/files/projects/hydrogen-engine/毕业答辩PPT-熊浩-终稿.pptx"
+  - title: "Appendix data files"
+    filename: "氢内燃机爆震研究-附录文件.zip"
+    url: "/files/projects/hydrogen-engine/氢内燃机爆震研究-附录文件.zip"
 ---
 
 ## Project Overview
@@ -62,3 +65,4 @@ Knock onset was modeled with a Livengood–Wu integral representing cumulative e
 
 - Project code: archived locally; public release will follow code organization, execution checks, and removal of sensitive information.
 - The undergraduate thesis is available as a PDF and the defense slides as a PPTX; click the corresponding filename under “Project Attachments” to open it.
+- Appendix data: the laminar-flame-speed training set, τ lookup table, and experimental/simulated cylinder-pressure data are publicly available as a ZIP archive.
